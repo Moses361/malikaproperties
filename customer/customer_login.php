@@ -1,55 +1,29 @@
-<div class="box"><!-- Box begin-->
+<div class="flex items-center justify-center mx-auto mb-10">
+    <div class="box w-2/3"><!-- Box begin-->
 
-    <div class="box-header"><!-- box-header begin-->
-    
-         <center>
-         
-             <h1>Login</h1>
-             <p class="lead">Already have an account.?</p>
-         
-         </center>   
-    
-    </div><!-- box-header finish-->
-    <form method="post" action="login.php"><!-- form begin-->
-    
-       <div class="form-group"><!-- form-group begin-->
-          
-          <label>Email</label>
-          <input name="c_email" type="text" class="form-control" required>
-       
-       </div><!-- form-group Finish-->
-       <div class="form-group"><!-- form-group begin-->
-          
-          <label>Password</label>
-          <input name="c_pass" type="password" class="form-control" required>
-       
-       </div><!-- form-group Finish-->
-       <div class="text-center"><!-- text-center begin-->
-       
-            <button name="login" value="Login" class="btn btn-primary">
-            
-                <i class="fa fa-sign-in"></i> Login
-            
-            </button>
-       
-       </div><!-- text-center Finish-->
-    
-    </form><!-- form Finish-->
-
-    <center>
-    
-        <a href="customer_register.php">
+        <div class="box-header"><!-- box-header begin-->
+            <p class="lead">Welcome Back!</p>
+        </div><!-- box-header finish-->
+        <form method="post" action="login.php"><!-- form begin-->
+        <div class="form-group"><!-- form-group begin-->
+            <label>Email</label>
+            <input name="c_email" type="text" class="form-control" required>
+        </div><!-- form-group Finish-->
+        <div class="form-group"><!-- form-group begin-->
+            <label>Password</label>
+            <input name="c_pass" type="password" class="form-control" required>
         
-          <h3>Dont have an account.? Register here!</h3>
-        
-        </a>
+        </div><!-- form-group Finish-->
+        <div class="text-center"><!-- text-center begin-->
+                <button name="login" value="Login" class="btn btn-primary">
+                    <i class="fa fa-sign-in"></i> Login
+                </button>
+        </div><!-- text-center Finish-->
+        </form><!-- form Finish-->
+    </div><!-- Box Finish-->
+</div>
 
-    
-    </center>
-
-</div><!-- Box Finish-->
 <?php 
-
 if(isset($_POST['login'])){
     
     $customer_email = $_POST['c_email'];
@@ -71,29 +45,21 @@ if(isset($_POST['login'])){
     $check_cart = mysqli_num_rows($run_cart);
     
     if($check_customer==0){
-        
         echo "<script>alert('Invalid email or password')</script>";
-        
         exit();
-        
     }
     
     if($check_customer==1 AND $check_cart==0){
         
         $_SESSION['customer_email']=$customer_email;
-        
-       echo "<script>alert('Log in success')</script>"; 
-        
-       echo "<script>window.open('customer/my_account.php?my_orders','_self')</script>";
-        
+        $_SESSION['success'] = "Login success";
+        header('location: index.php');
     }else{
         
         $_SESSION['customer_email']=$customer_email;
         
-       echo "<script>alert('Log in success')</script>"; 
-        
-       echo "<script>window.open('login.php','_self')</script>";
-        
+        $_SESSION['success'] = "Login success";
+        header('location: index.php');
     }
     
 }

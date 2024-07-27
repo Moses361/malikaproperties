@@ -3,7 +3,7 @@
     include("includes/header.php");
 
     // redirect to home page if already logged in 
-    if(isset($_SESSION['customer_email'])){
+    if(!isset($_SESSION['customer_email'])){
         header('location: index.php');
         exit();
     }
@@ -29,9 +29,7 @@
     <div class="col-md-12"><!--col-md-9   Finish -->
 
           <?php 
-              if(!isset($_SESSION['customer_email'])){
-                include("customer/customer_login.php");
-              }
+              include_once("payment_options.php");
           ?>
     </div><!--col-md-9   Finish -->
 
