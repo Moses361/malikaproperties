@@ -138,8 +138,8 @@ if (isset($_POST['addToCar'])) {
                                         oninput="setCustomValidity('')"
                                         oninvalid="setCustomValidity('Must pick 1 size for the product')"><!-- form-control Begin -->
                                         <option disabled selected>Select Category</option>
-                                        <option>Fragile</option>
-                                        <option>Durable</option>
+                                        <option>Other</option>
+                                        <option>Other</option>
                                         <option>Other</option>
                                     </select><!-- form-control Finish -->
                                 </div><!-- col-md-7 Finish -->

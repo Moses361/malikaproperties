@@ -69,12 +69,12 @@
             <div class="com-sm-6 col-md-3"><!-- com-sm-6 col-md-3 begin-->
                 <h4>Find Us</h4>
                 <p><!-- p begin-->
-                  <strong>Rocket Delivery.</strong>
+                  <strong>Real Estate Investements.</strong>
                   </br>Nairobi
                   </br>Tel
-                  </br>0759930912
-                  </br>odhismoses20@gmail.com
-                  </br><strong>Mr. Moses</strong>
+                  </br>0741261053
+                  </br>missmalika@gmail.com
+                  </br><strong>Miss Malika</strong>
                   </br>
                 </p><!-- p Finish-->
 
@@ -116,10 +116,10 @@
 <div id="copyright"><!-- copyright begin-->
     <div class="container"><!-- container begin-->
         <div class="col-md-6"><!-- col-md-6 begin-->
-            <p class="pull-left">&copy;2023 Rocket Delivery All Rights reserved</p>
+            <p class="pull-left">&copy;2024 Real Estate Investements All Rights reserved</p>
         </div><!-- col-md-6 Finish-->
          <div class="col-md-6"><!-- col-md-6 begin-->
-            <p class="pull-right"> Designed and Managed by: Odhismoses</p>
+            <p class="pull-right"> Designed and Managed by: missmalika</p>
         </div><!-- col-md-6 Finish-->
     </div><!-- container Finish-->
 </div><!-- copyright Finish-->
