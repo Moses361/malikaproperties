@@ -24,7 +24,7 @@
     
        <div class="box"><!--box   begin-->
        
-           <form action="cart.php" method="post" enctype="multipart/form-data"><!--form   begin -->
+           <form action="bookingHistory.php" method="post" enctype="multipart/form-data"><!--form   begin -->
            
                <h1>Referals </h1>
 
@@ -142,7 +142,7 @@
 
                           echo "
                           
-                             <script>window.open('cart.php','_self')</script>
+                             <script>window.open('bookingHistory.php','_self')</script>
                           
                           ";
 

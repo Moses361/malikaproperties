@@ -83,7 +83,7 @@
                         <a href="my_account.php">My Account</a>
                     </li>
                     <li>
-                         <a href="../cart.php">Go To Cart</a>
+                         <a href="../bookingHistory.php">Go To Cart</a>
                     </li>
                     <li>
                           <a href="../checkout.php">
@@ -141,7 +141,7 @@
                                   <a href="../shop.php">SHOP</a>
                               </li>
                               <li>
-                                  <a href="../cart.php">SHOPPING CART</a>
+                                  <a href="../bookingHistory.php">SHOPPING CART</a>
                               </li>
                               <li class="active">
                                  <a href="my_account.php">MY ACCOUNT</a>

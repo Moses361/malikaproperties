@@ -66,7 +66,7 @@
                         <a href="my_account.php">My Account</a>
                     </li>
                     <li>
-                         <a href="../cart.php">Go To Cart</a>
+                         <a href="../bookingHistory.php">Go To Cart</a>
                     </li>
                     <li>
                           <a href="../checkout.php">
@@ -124,7 +124,7 @@
                                   <a href="../shop.php">SHOP</a>
                               </li>
                               <li>
-                                  <a href="../cart.php">SHOPPING CART</a>
+                                  <a href="../bookingHistory.php">SHOPPING CART</a>
                               </li>
                               <li class="active">
                                  <a href="my_account.php">MY ACCOUNT</a>
@@ -136,7 +136,7 @@
                            </ul><!--nav navbar-nav left  finish -->
                        
                       </div><!--paddig-nav  finish -->
-                        <a href="../cart.php" class="btn navbar-btn btn-primary right"><!--btn navbar-btn btn-primary right Begin -->
+                        <a href="../bookingHistory.php" class="btn navbar-btn btn-primary right"><!--btn navbar-btn btn-primary right Begin -->
                             <i class="fa fa-shoping-cart"></i>
                                <span><?php  items();?> Items In Your Cart</span>
                         </a><!--btn navbar-btn btn-primary right Finish -->

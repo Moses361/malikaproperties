@@ -41,7 +41,7 @@ if(mysqli_num_rows($run_cart2) > 0){
 
       <div class="box"><!--box   begin-->
 
-        <form action="cart.php" method="post" enctype="multipart/form-data" id="orderForm"><!--form   begin -->
+        <form action="bookingHistory.php" method="post" enctype="multipart/form-data" id="orderForm"><!--form   begin -->
 
           <h1>Order Request</h1>
 
@@ -230,7 +230,7 @@ if(mysqli_num_rows($run_cart2) > 0){
             if ($run_delete) {
 
               echo "
-                  <script>window.open('cart.php','_self')</script>
+                  <script>window.open('bookingHistory.php','_self')</script>
                   ";
             }
 

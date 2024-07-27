@@ -11,7 +11,7 @@ $ip_add = getRealIpUser();
 // for testing 
 header("Location: checkout.php");
 exit();
-
+    
 $p_id = $_POST['product_id'];
 
 $product_qty = @$_POST['product_qty'];

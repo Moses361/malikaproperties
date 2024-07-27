@@ -4,7 +4,7 @@
             <div class="col-sm-6 col-md-3"><!-- col-sm-6 col-md-3 begin-->
                  <h4>Pages</h4>
              <ul><!-- ul begin-->
-                 <li><a href="cart.php">Order Cart</a></li>
+                 <li><a href="bookingHistory.php">Order Cart</a></li>
                  <li><a href="contact.php">Contac Us</a></li>
                  <li><a href="shop.php">Order</a></li>
                  <li><a href="customer/my_account.php">My Account</a></li>
