@@ -150,13 +150,13 @@ if (isset($_POST['addToCar'])) {
                             <!-- form-horizontal Begin -->
                              <h4 class="text-4xl font-bold">Complete your booking</h4>
                             <input type="hidden" value="<?=$product_id;?>" name="product_id"> <!--product id -->
-                            <div class="text-2xl mt-5"><span class="font-bold">Base Price:</span> <span class="text-primary">Ksh. <?=number_format($pro_price,"0", ".", ",");?> </span></div>
+                            <div class="text-2xl mt-5"><span class="font-bold">Base Price:</span> <span class="text-primary">Ksh. <span id="basePrice"><?=number_format($pro_price,"0", ".", ",");?> </span></span></div>
                             <div class="flex flex-col justify-between mt-3">
                                 <label for="num_units">Number of Units</label>
                                 <input type="number" id="num_units" name="num_units" placeholder="Number of Units to book" class="focus:outline-none border border-primary rounded-2xl px-3 py-5" value="1">
                             </div>
                             <div class="mt-3 text-2xl">Total: <span id="calculated_totals" class="text-primary">12,000 </span></div>
-
+                            <input type="hidden" value="total" id="total">
                             <p class="text-end w-full flex items-end justify-end pe-5">
                                 <button class="btn btn-primary px-10 py-5 fa fa-shopping-cart" name="addToCart" type="submit"> Checkout</button>
                             </p>
@@ -284,6 +284,19 @@ include("includes/footer.php");
     });
 
 
+    // auto calculate total
+    const calculateTotals = () => {
+        const basePrice = document.getElementById('basePrice').innerText.replace(/,/g, '');
+        const calculatedTotals = document.getElementById('calculated_totals');
+        const totalInput = document.getElementById('total');
+        const numUnits = document.getElementById('num_units').value;
+        const totalAmount = basePrice * numUnits;
+        calculatedTotals.innerText = totalAmount.toLocaleString();
+        totalInput.value = totalAmount;
+    }
 
-
+    const numUnits = document.getElementById('num_units');
+    numUnits.addEventListener("keyup", calculateTotals);
+    numUnits.addEventListener("change", calculateTotals);
+    calculateTotals();
 </script>
