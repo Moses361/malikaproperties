@@ -46,6 +46,27 @@
     <link rel="stylesheet" href="styles/bootstrap-337.min.css">
     <link rel="stylesheet" href="font-awsome/css/font-awesome.min.css">
     <link rel="stylesheet" href="styles/style.css">
+    <style type="text/tailwindcss">
+       @layer utilities {
+          .content-auto {
+             content-visibility: auto;
+            }
+         }
+         </style>
+
+   <script src="https://cdn.tailwindcss.com"></script>
+   <script>
+      tailwind.config = {
+         theme: {
+         extend: {
+            colors: {
+               primary: '#4fbfa8',
+            }
+         }
+         }
+      }
+   </script>
+
     
 </head>
 <body>
@@ -132,10 +153,10 @@
                   </button>
 
                 </diV><!--navbar-header  finish -->
-                <div class="navbar-collapse collapse" id="navigation"><!--navbar-collapse collapse  begin -->
+                <div class="" id="navigation"><!--navbar-collapse collapse  begin -->
                       <div class="paddig-nav"><!--p
                       ig-nav  Begin -->
-                           <ul class="nav navbar-nav left"><!--nav navbar-nav left  Begin -->
+                           <ul class="nav navbar-nav left text-black"><!--nav navbar-nav left  Begin -->
                               <li class="<?php if($active=='HOME') echo"active"; ?>">
                                  <a href="index.php">HOME</a>
                               <li>

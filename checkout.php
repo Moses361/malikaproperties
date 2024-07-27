@@ -14,18 +14,15 @@
                   <a href="index.php">Home</a>
               </li>
               <li>
-                  Register
+                  <a href="details.php?pro_id=">Product Details</a>
+              </li>
+              <li>
+                  <a href="checkout.php">Checkout</a>
               </li>
           </ul><!--breadcrumb   Finish -->
     
     </div><!--container col-md-12  Finish -->
-    <div class="col-md-3"><!--col-md-3   begin -->
-    
-          <?php
-               include("includes/sidebar.php")
-           ?>
-    </div><!--col-md-3   Finish -->
-    <div class="col-md-9"><!--col-md-9   Finish -->
+    <div class="col-md-12"><!--col-md-9   Finish -->
 
           <?php 
           

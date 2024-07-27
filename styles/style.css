@@ -219,9 +219,9 @@ body{
 .breadcrumb{
     padding: 8px 15px;
     margin-bottom: 20px;
+    width: max-content;
     background: #ffffff;
     border-radius: 5px;
-    box-shadow: 0px 1px 5px rgba(0, 0, 0, .5);
 }
 .breadcrumb> li + li:before{
     content: ">\00a0";
@@ -464,6 +464,9 @@ body{
 .product a img.img-responsive{
     max-height: 252px;
     width: 100%;
+    overflow: hidden;
+    object-fit: cover;
+    object-position: center;
 }
                             
                             

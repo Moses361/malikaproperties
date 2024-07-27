@@ -83,49 +83,34 @@ function getPro()
 
         $pro_title = $row_products['product_title'];
         $pro_price = $row_products['product_price'];
+        $pro_price = number_format($pro_price, "0", ".", ",");
         $pro_img1 = $row_products['product_img1'];
 
         echo "
-        
-         <div class='col-md-4 col-sm-6 single'>
-         
-             <div class='product'>
-             
+        <div class='col-md-4 col-sm-6 single'>
+            <div class='product p-2 rounded'>
                 <a href='details.php?pro_id=$pro_id'>
-                    <img class='img-responsive' src='admin_area/product_images/$pro_img1'>
+                    <img class='img-responsive rounded-md' src='admin_area/product_images/$pro_img1'>
                 </a>
-                <div class='text'>
-                
-                   <h3>
-                   
-                       <a href='details.php?pro_id=$pro_id'>
-                          $pro_title
-                       </a>
-                   
-                       <p class='price'>
-                       
-                           Ksh.$pro_price
-                       
-                       </p>
+                <div class='text-left py-5 px-5'>
+                    <h4 class='text-red-500 font-bold text-2xl'>Ksh. $pro_price</h4>
+                    <h3 class='pt-2 text-3xl'>
+                        <a href='details.php?pro_id=$pro_id'>
+                            $pro_title
+                        </a>
                     </h3>
-                       <p class='button'>
-                       
-                            <a class='btn btn-default' href='details.php?pro_id=$pro_id'>
-                                View Details
-                            </a>
-                            <a class='btn btn-primary' href='details.php?pro_id=$pro_id'>
-                                <i class='fa fa-shopping-cart'></i> Book
-                            </a>
-                       
-                       </p>
-                   
-                   
-                
+                    <div class='pt-2 cursor-pointer text-primary'><i class='fa fa-map-marker'> </i> Nairobi Area </div>
+                    <p class='button pt-2 flex justify-between'>
+                        <a class='btn btn-default' href='details.php?pro_id=$pro_id'>
+                            View Listing
+                        </a>
+                        <a class='btn btn-primary' href='details.php?pro_id=$pro_id'>
+                            <i class='fa fa-shopping-cart'></i> Book
+                        </a>
+                    </p>
                 </div>
-             </div>
-         
-         </div>
-        
+            </div>
+        </div>
         ";
 
     }

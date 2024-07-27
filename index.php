@@ -1,68 +1,30 @@
 <?php 
     $active='HOME';
    include("includes/header.php");
-//    require_once "Fucntions.php";
+//    require_once "Fucnt ions.php";
 
 ?>
+<div class="container mx-auto">
+    <div class="grid grid-cols-5 gap-x-5 bg-success flex p-10 rounded-2xl">
+        <select name="category" class="rounded">
+            <option value="1">Category1</option>
+            <option value="2">Category2</option>
+            <option value="3">Category3</option>
+            <option value="4">Category4</option>
+        </select>   
+        <input type="search" name="search"  class="col-span-2 rounded-lg outline-none px-3 py-5" placeholder="Enter a Location or Town">
+        <input type="number" name="max_price" class="rounded-lg outline-none px-3 py-5" placeholder="Max Price (Ksh)">
+        <button class="rounded-2xl bg-primary text-white p-2 active:outline-none focus:outline-none focus:ring-2 focus:ring-primary-300 focus:ring-opacity-50">Search</button>
+    </div>
+</div>
 
-
-<div id="advantages"><!--advantages begin-->
-     <div class="container"><!--container  begin -->
-        <div class="same-height-row"><!--same-height-row  begin -->
-           <div class="col-sm-4"><!--col-sm-4  begin --> 
-               <div class="box same-height"><!--box same-height  begin -->
-                  <div class="icon"><!--icon begin -->
-                     <i class="fa fa-heart"></i>
-                  </div><!--icon  Finish -->
-                   <h3><a href="#">We Love Our Customers</a></h3>
-                   <p>We pride ourselves on putting our customers first and providing personalized and attentive service to ensure their satisfaction. </p>
-               </div><!--box same-height  Finish -->
-           </div> <!--col-sm-4  Finish -->
-           <div class="col-sm-4"><!--col-sm-4  begin --> 
-               <div class="box same-height"><!--box same-height  begin -->
-                  <div class="icon"><!--icon begin -->
-                     <i class="fa fa-tag"></i>
-                  </div><!--icon  Finish -->
-                   <h3><a href="#">We Have The Best Prices</a></h3>
-                   <p>Prices are typically provided through a customized quote based on your specific needs and preferences. </p>
-               </div><!--box same-height  Finish -->
-           </div> <!--col-sm-4  Finish -->
-           <div class="col-sm-4"><!--col-sm-4  begin --> 
-               <div class="box same-height"><!--box same-height  begin -->
-                  <div class="icon"><!--icon begin -->
-                     <i class="fa fa-thumbs-up"></i>
-                  </div><!--icon  Finish -->
-                   <h3><a href="#">100% Proffesional Services</a></h3>
-                   <p>We provide relocation services such as packing, transportation, and storage for smooth and stress-free move for individuals and businesses. </p>
-               </div><!--box same-height  Finish -->
-           </div> <!--col-sm-4  Finish -->
-             
-        </div><!--same-height-row  Finish -->
-     </div><!--container  Finish -->
-</div><!--advantages  Finish -->
- <div id="hot"><!--hot  begin -->
-
-     <div class="box"><!--box begin -->
-           
-           <div class="container"><!--container begin -->
-
-                <div class="col-md-12"><!--col-md-12  begin -->
-                     <h2>
-                         Our Latest Services
-                     </h2>
-
-                </div><!--col-md-12  Finish -->
-
-           </div><!--container  Finish -->
-
-     </div><!--box  Finish -->
-
- </div><!--hot  Finish -->
+<div class="bg-white p-5 mx-2 my-3 rounded-xl"><!--box begin -->
+    <h2 class="capitalize pl-20 text-primary text-6xl">Featured Listings</h2>
+</div><!--box  Finish -->
 
  <div id="content" class="container"><!--container begin -->
 
-<div class="row"><!--row  begin -->
-
+<div class="grid grid-cols-4 gap-x-5"><!--row  begin -->
     <?php 
     
        getPro();
@@ -72,7 +34,6 @@
 </div><!--row  Finish -->
 
 </div><!--row  container -->
-
 
     <?php
     
