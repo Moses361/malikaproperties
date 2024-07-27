@@ -9,7 +9,7 @@ $db = mysqli_connect("localhost", "root", "", "pam");
 $ip_add = getRealIpUser();
 
 // for testing 
-header("Location: checkout.php");
+header("Location: login.php");
 exit();
     
 $p_id = $_POST['product_id'];

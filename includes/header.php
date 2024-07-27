@@ -96,7 +96,7 @@
                               
                                  if(!isset($_SESSION['customer_email'])){
 
-                                       echo"<a href='checkout.php'>MY ACCOUNT</a>";
+                                       echo"<a href='login.php'>MY ACCOUNT</a>";
                                        // echo"<a href='referals.php'>Referals</a>";
                                  }else{
 
@@ -111,13 +111,23 @@
                   </ul><!--nav navbar-nav left  finish -->
                   <ul class="nav navbar-nav left text-black">
                      <li><a href="customer/my_account.php"><?php echo $_SESSION['customer_email']; ?></a></li>
+                        <?php
+                           if(isset($_SESSION['customer_email'])){
+                        ?>
                      <li>
-                        <!-- <a href="logout.php" class="no-underline"><button class="btn border border-primary text-primary hover:border-none hover:text-white hover:bg-primary">Logout</button> </a> -->
+                        <a href="logout.php" class="no-underline"><button class="btn border border-primary text-primary hover:border-none hover:text-white hover:bg-primary">Logout</button> </a>
                      </li>
+                        <?php 
+                           };
+                           if(!isset($_SESSION['customer_email'])){
+                        ?>
                      <li style="display: flex; align-items: center;">
-                        <a href="customer/customer_login.php" class="no-underline"><button class="btn border text-white bg-primary border-none hover:border-ring px-8 py-3">Login</button> </a> or 
-                        <a href="register.php" class="no-underline"><button class="btn border border-primary text-primary hover:border-none hover:text-white hover:bg-primary">Register</button> </a>
+                        <a href="login.php" class="no-underline"><button class="btn border text-white bg-primary border-none hover:border-ring px-8 py-3">Login</button> </a> or 
+                        <a href="customer_register.php" class="no-underline"><button class="btn border border-primary text-primary hover:border-none hover:text-white hover:bg-primary">Register</button> </a>
                      </li>
+                        <?php
+                           };
+                        ?>
                   </ul>
                </div><!--paddig-nav  finish -->
             </div><!--collapse clearfix  finish --> 

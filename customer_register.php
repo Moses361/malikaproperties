@@ -55,7 +55,7 @@
             
             echo "<script>alert('You have been Registered Sucessfully')</script>";
             
-            echo "<script>window.open('checkout.php','_self')</script>";
+            echo "<script>window.open('login.php','_self')</script>";
             
         }else{
             

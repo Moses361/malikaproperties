@@ -4,7 +4,7 @@ $active = 'SHOPPING CART';
 include("includes/header.php");
 
 if(!isset($_SESSION['customer_email'])){
-  die("Kndly log in to access your order cart!");
+  die("You need to be logged in to access your booking history");
 }
 
 $intiator = trim($_SESSION['customer_email']);
@@ -202,7 +202,7 @@ if(mysqli_num_rows($run_cart2) > 0){
               <button id="downloadBtn" class="btn btn-lg btn-success">Download</button>
 
 
-              <a href="checkout.php" class="btn btn-primary">
+              <a href="login.php" class="btn btn-primary">
                 Proceed Checkout <i class="fa fa-chevron-right"></i>
 
               </a>

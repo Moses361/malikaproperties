@@ -3,7 +3,7 @@
    session_start();
    if(!isset($_SESSION['customer_email'])){
 
-     echo"<script>window.open('../checkout.php','_self')</script>";
+     echo"<script>window.open('../login.php','_self')</script>";
 
    }else{
 
@@ -48,7 +48,7 @@
                   ?>
                 
                 </a>
-                <a href="checkout.php"><?php  items();  ?> Items In Your Order | Total Price: Ksh.<?php total_price(); ?></a>
+                <a href="login.php"><?php  items();  ?> Items In Your Order | Total Price: Ksh.<?php total_price(); ?></a>
 
              </div><!--offer Finish -->
 
@@ -64,13 +64,13 @@
                          <a href="../bookingHistory.php">Go To Order</a>
                     </li>
                     <li>
-                          <a href="../checkout.php">
+                          <a href="../login.php">
                           
                              <?php 
                           
                                if(!isset($_SESSION['customer_email'])){
                        
-                                  echo "<a href='checkout.php'>Login</a>";
+                                  echo "<a href='login.php'>Login</a>";
                        
                                 }else{
                        

@@ -17,7 +17,7 @@
                   <a href="details.php?pro_id=">Product Details</a>
               </li>
               <li>
-                  <a href="checkout.php">Checkout</a>
+                  <a href="login.php">Checkout</a>
               </li>
           </ul><!--breadcrumb   Finish -->
     

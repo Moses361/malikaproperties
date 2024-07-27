@@ -10,7 +10,7 @@
          </center>   
     
     </div><!-- box-header finish-->
-    <form method="post" action="checkout.php"><!-- form begin-->
+    <form method="post" action="login.php"><!-- form begin-->
     
        <div class="form-group"><!-- form-group begin-->
           
@@ -92,7 +92,7 @@ if(isset($_POST['login'])){
         
        echo "<script>alert('Log in success')</script>"; 
         
-       echo "<script>window.open('checkout.php','_self')</script>";
+       echo "<script>window.open('login.php','_self')</script>";
         
     }
     
