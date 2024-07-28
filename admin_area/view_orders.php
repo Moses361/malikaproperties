@@ -10,11 +10,8 @@
 }
 </style>
 <?php 
-    
     if(!isset($_SESSION['admin_email'])){
-        
         echo "<script>window.open('login.php','_self')</script>";
-        
     }else{
         require_once('../payment.php');
         // check order payment status

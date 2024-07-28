@@ -137,15 +137,7 @@ if (isset($_POST['addToCar'])) {
                         if(!isset($_SESSION['customer_email'])){
                             die("You should be logged in to Add items to cart");
                         }
-                        $total = total_price2();
-                        add_cart($total);
-                        // $_SESSION['new_total'] = get_total();
-                        
-                        // }
-                        
-
                         ?>
-
                         <form action="addToCart.php" class="form-horizontal flex justify-start items-start ml-10 flex-col" method="POST">
                             <!-- form-horizontal Begin -->
                              <h4 class="text-4xl font-bold">Complete your booking</h4>
