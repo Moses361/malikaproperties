@@ -11,33 +11,35 @@
 </style>
 <?php 
     if(!isset($_SESSION['admin_email'])){
-        echo "<script>window.open('login.php','_self')</script>";
-    }else{
-        require_once('../payment.php');
-        // check order payment status
-        function checkOrderPaymentStatus($con){
-            $sql = "SELECT * FROM transactions WHERE checked=false AND checkout_request_id != ''";
-            $query = mysqli_query($con, $sql);
-            if (!$query) die("Error getting transactions: ".mysqli_error($con));
+        header("Location: login.php");
+        return;
+    }
+    
+    require_once('../payment.php');
 
-            while(($data = mysqli_fetch_array($query))){
-                $order_id = $data['order_id'];
-                $mpesa = new MpesaApi($order_id);
-                $response = $mpesa->verifyTransactionDetails($data['checkout_request_id']);
-                $data = json_decode($response, true);
-                $resultCode = $data['ResultCode'];
-                if ($resultCode == 0){
-                    // order successfully paid. update order status
-                    $sql = "UPDATE orders SET payment_status='Paid' WHERE order_id='$order_id';";
-                }else{
-                    // order cancelled or not paid, or cancelled by the user
-                    $sql = "UPDATE orders SET payment_status='Cancelled' WHERE order_id='$order_id';";
-                }
-                $q2 = mysqli_query($con, $sql); // update orders
-                mysqli_query($con, "UPDATE transactions SET checked=true WHERE order_id='$order_id';"); // set as checked
-                if (!$q2) die("Errror updating payment status: ".mysqli_error($con));
-            }
-        }
+    // check order payment status
+    // function checkOrderPaymentStatus($con){
+    //     $sql = "SELECT * FROM transactions WHERE checked=false AND checkout_request_id != ''";
+    //     $query = mysqli_query($con, $sql);
+    //     if (!$query) die("Error getting transactions: ".mysqli_error($con));
+
+    //     while(($data = mysqli_fetch_array($query))){
+    //         $order_id = $data['order_id'];
+    //         $mpesa = new MpesaApi($order_id);
+    //         $response = $mpesa->verifyTransactionDetails($data['checkout_request_id']);
+    //         $data = json_decode($response, true);
+    //         $resultCode = $data['ResultCode'];
+    //         if ($resultCode == 0){
+    //             // order successfully paid. update order status
+    //             $sql = "UPDATE orders SET payment_status='Paid' WHERE order_id='$order_id';";
+    //         }else{
+    //             // order cancelled or not paid, or cancelled by the user
+    //             $sql = "UPDATE orders SET payment_status='Cancelled' WHERE order_id='$order_id';";
+    //         }
+    //         $q2 = mysqli_query($con, $sql); // update orders
+    //         mysqli_query($con, "UPDATE transactions SET checked=true WHERE order_id='$order_id';"); // set as checked
+    //         if (!$q2) die("Errror updating payment status: ".mysqli_error($con));
+    //     }
 ?>
 
 <div class="row"><!-- row 1 begin -->
@@ -69,103 +71,70 @@
                         
                         <thead><!-- thead begin -->
                             <tr><!-- tr begin -->
-                                <th> No: </th>
-                                <th> Customer Email: </th>
-                                <th>Order ID: </th>
-                                <!-- <th> Service  Name: </th> -->
-                                <!-- <th> Service Qty: </th> -->
-                                <th> origin: </th>
-                                <th> destination: </th>
-                                <th> Total Amount: </th>
-                                <th> Status: </th>
-                                <th> Date: </th>
-                                <th> Delete: </th>
+                                <th>Name </th>
+                                <th>Email </th>
+                                <th>Phone</th>
+                                <th>Unit</th>
+                                <th>Units Booked</th>
+                                <th>Unit Price</th>
+                                <th>Total Amount </th>
+                                <th>Date</th>
+                                <th>Payment Status</th>
+                                <th>Action</th>
                             </tr><!-- tr finish -->
                         </thead><!-- thead finish -->
-                        
                         <tbody><!-- tbody begin -->
-                            
                             <?php 
                                 // update orders payment status
-                                checkOrderPaymentStatus($con);
-                                $i=0;
+                                // checkOrderPaymentStatus($con);
+                                $sql = "SELECT orders.*, 
+                                        customers.customer_name, customers.second_name, customers.customer_email, customers.customer_contact, 
+                                        products.product_id, products.product_title, products.product_img1, products.product_price, 
+                                        transactions.paid as is_paid, transactions.checked as is_checked
+                                        FROM orders INNER JOIN products ON orders.product_id = products.product_id
+                                        INNER JOIN customers ON orders.customer_id = customers.customer_id
+                                        INNER JOIN transactions ON orders.id = transactions.order_id";
 
-                                $get_orders = "select * from orders";
-                                
-                                $run_orders = mysqli_query($con,$get_orders);
-          
-                                while($row_order=mysqli_fetch_array($run_orders)){
-                                    $customer = $row_order['customer'];
-                                    // $c_id = $row_order['customer_id'];
-                                    $order_id = $row_order['id'];
-                                    $invoice_no = $row_order['order_id'];
-                                    // $origin       = $row_order['origin'];
-                                    // $destination  = $row_order['destination'];
-                                    $origin       = $row_order['origin'];
-                                    $destination  = $row_order['destination'];
-                                    $date = $row_order['order_date'];
-                                    $amount = $row_order['amount'];
+                                $query = mysqli_query($con,$sql);
 
-                                    // verify payment status of the product
-                                    $status = $row_order['payment_status'];
-                                    // $size = $row_order['size'];
-                                    
-                                    // $order_status = $row_order['order_status'];
-                                    
-                                    // $get_products = "select * from products where product_id='$product_id'";
-                                    
-                                    // $run_products = mysqli_query($con,$get_products);
-                                    
-                                    // $row_products = mysqli_fetch_array($run_products);
-                                    
-                                    // $product_title = $row_products['product_title'];
-                                    
-                                    // $get_customer = "select * from customers where customer_id='$c_id'";
-                                    
-                                    // $run_customer = mysqli_query($con,$get_customer);
-                                    
-                                    // $row_customer = mysqli_fetch_array($run_customer);
-                                    
-                                    // $customer_email = $row_customer['customer'];
-                                    
-                                    // $get_c_order = "select * from customer_orders where order_id='$order_id'";
-                                    
-                                    // $run_c_order = mysqli_query($con,$get_c_order);
-                                    
-                                    // $row_c_order = mysqli_fetch_array($run_c_order);
-                                    
-                                    // $order_date = $row_c_order['order_date'];
-                                    
-                                    // $order_amount = $row_c_order['due_amount'];
-                                    
-                                    $i++;
-                            
+                                while($row_order=mysqli_fetch_array($query)){
+                                    $first_name= $row_order['customer_name'];
+                                    $last_name = $row_order['second_name'];
+                                    $customer_email = $row_order['customer_email'];
+                                    $customer_phone = $row_order['customer_contact'];
+                                    $unit = $row_order['product_title'];
+                                    $units_booked = $row_order['num_units'];
+                                    $unit_price = $row_order['product_price'];
+                                    $total_amount = $unit_price * $units_booked;
+                                    $date = $row_order['created_at'];
+                                    // format date in terms of  
+                                    $payment_status = $row_order['is_paid'] ? 'Paid' : 'Pending';
+                                    $date = date('d/m/y h:i A', strtotime($date));
+                                    $unit_price = number_format($unit_price,"0", ".",",");
+                                    $total_amount = number_format($total_amount,"0", ".",",");
                             ?>
-                            
                             <tr><!-- tr begin -->
-                                <td> <?php echo $i; ?> </td>
-                                <td> <?php echo $customer; ?> </td>
-                                <td> <?php echo $invoice_no; ?></td>
-                                <td> <?php echo $origin; ?></td>
-                                <td> <?php echo $destination; ?></td>
-                                <td> <?php echo $amount; ?> </td>
-                                <td> <?php 
-                                    $class = strtolower($status);
-                                    echo "<span class='$class'> $status </span>";?> </td>
+                                <td> <?php echo $first_name." ".$last_name; ?> </td>
+                                <td> <?php echo $customer_email; ?> </td>
+                                <td> <?php echo $customer_phone; ?> </td>
+                                <td> <?php echo $unit; ?> </td>
+                                <td> <?php echo $units_booked; ?> </td>
+                                <td> <?php echo $unit_price; ?> </td>
+                                <td> <?php echo $total_amount; ?> </td>
                                 <td> <?php echo $date; ?> </td>
                                 <td> 
-                                     
-                                     <a href="index.php?delete_order=<?php echo $order_id; ?>">
-                                     
+                                    <?php 
+                                        $class = strtolower($payment_status);
+                                        echo "<span class='$class'> $payment_status </span>";
+                                    ?> 
+                                </td>
+                                <td> 
+                                    <a href="index.php?delete_order=<?php echo $order_id; ?>">
                                         <i class="fa fa-trash-o"></i> Delete
-                                    
-                                     </a> 
-                                     
+                                    </a> 
                                 </td>
                             </tr><!-- tr finish -->
-                            
                             <?php } ?>
-                            
                         </tbody><!-- tbody finish -->
                         
                     </table><!-- table table-striped table-bordered table-hover finish -->
@@ -175,5 +144,3 @@
         </div><!-- panel panel-default finish -->
     </div><!-- col-lg-12 finish -->
 </div><!-- row 2 finish -->
-
-<?php } ?>
