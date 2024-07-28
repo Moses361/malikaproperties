@@ -74,7 +74,6 @@ CREATE TABLE `cart` (
 
 LOCK TABLES `cart` WRITE;
 /*!40000 ALTER TABLE `cart` DISABLE KEYS */;
-INSERT INTO `cart` VALUES (27,'::1',1,'10500','',57,0,'Nairobi','Nairobi','2024-07-30 21:00:00'),(25,'::1',1,'5500','',58,0,'Nairobi','Nairobi','2024-07-20 15:27:15');
 /*!40000 ALTER TABLE `cart` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -211,7 +210,7 @@ CREATE TABLE `orders` (
   `order_date` timestamp NOT NULL DEFAULT current_timestamp(),
   `location` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=115 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=121 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -220,7 +219,7 @@ CREATE TABLE `orders` (
 
 LOCK TABLES `orders` WRITE;
 /*!40000 ALTER TABLE `orders` DISABLE KEYS */;
-INSERT INTO `orders` VALUES (68,'moses@gmail.com','714940','pending','27100','Nairobi','Coast','2023-03-31 21:00:00','Nairobi'),(69,'moses@gmail.com','295482','pending','27100','Rift valley','Nairobi','2023-03-27 21:00:00',NULL),(70,'johniekyalo001@gmail.com','619841','pending','25500','Nairobi','Western','2023-04-05 21:00:00',NULL),(71,'johniekyalo001@gmail.com','314756','pending','25500','Rift valley','Nairobi','2023-03-29 21:00:00',NULL),(72,'moses@gmail.com','824238','pending','60000','Nairobi','Coast','2023-04-04 21:00:00',NULL),(89,'jose@gmail.com','670899','pending','66500','Nairobi','Nairobi','2023-03-29 16:40:15',NULL),(90,'jose@gmail.com','670899','pending','66500','Nairobi','Nairobi','2023-03-29 16:40:15',NULL),(91,'jose@gmail.com','670899','pending','66500','Nairobi','Nairobi','2023-03-29 16:40:16',NULL),(92,'jose@gmail.com','690138','pending','13500','Nairobi','Nairobi','2023-03-29 16:43:48',NULL),(93,'jose@gmail.com','690138','pending','13500','Nairobi','Thika','2023-03-29 16:43:48',NULL),(94,'jose@gmail.com','556681','pending','55000','Nairobi','Nairobi','2023-03-29 18:12:43',NULL),(95,'jose@gmail.com','556681','pending','55000','Nairobi','Nairobi','2023-03-29 18:12:43',NULL),(96,'jose@gmail.com','541780','pending','16000','Nairobi','Lodwar','2023-03-29 18:23:13',NULL),(97,'jose@gmail.com','541780','pending','16000','Nairobi','Kendu Bay','2023-03-29 18:23:14',NULL),(98,'jose@gmail.com','504036','pending','5500','Nairobi','Nairobi','2023-03-29 19:21:07',NULL),(99,'moses@gmail.com','941646','pending','20000','Kendu Bay','Nairobi','2023-03-29 19:31:36',NULL),(100,'jose@gmail.com','760854','pending','5500','Nairobi','Kisumu','2023-03-29 21:00:00',NULL),(101,'jose@gmail.com','797391','pending','5500','Nairobi','Kisumu','2023-03-29 21:00:00',NULL),(102,'jose@gmail.com','957053','Paid','8300','Nairobi','Nairobi','2023-03-29 21:00:00',NULL),(103,'jose@gmail.com','361128','Paid','5500','Kakamega','Nairobi','2023-03-31 21:00:00',NULL),(104,'jose@gmail.com','236304','Paid','5500','Nairobi','Sotik','2023-03-31 21:00:00',NULL),(105,'jose@gmail.com','424038','Cancelled','20000','Nairobi','Nyeri','2023-03-30 21:00:00',NULL),(106,'moses@gmail.com','171670','pending','75390','Nairobi','Kisumu','2023-04-12 21:00:00',NULL),(107,'moses@gmail.com','171670','pending','75390','Nairobi','Kisumu','2023-04-12 21:00:00',NULL),(108,'moses@gmail.com','778279','pending','8066','Nairobi','Malindi','2023-04-12 10:03:33',NULL),(109,'kodondi@gmail.com','855252','pending','32295','Kisumu','Nairobi','2023-04-12 12:22:09',NULL),(110,'odhismoses20@gmail.com','999936','pending','10500','Nairobi','Nairobi','2024-06-22 13:01:21',NULL),(111,'odhismoses20@gmail.com','817265','pending','10500','Nairobi','Nairobi','2024-06-22 13:01:21',NULL),(112,'odhismoses20@gmail.com','501390','pending','10500','Nairobi','Nairobi','2024-06-22 13:01:21',NULL),(113,'odhismoses20@gmail.com','964001','pending','10500','Nairobi','Nairobi','2024-06-22 13:01:21',NULL),(114,'odhismoses20@gmail.com','772056','pending','10500','Nairobi','Nairobi','2024-06-22 13:01:21',NULL);
+INSERT INTO `orders` VALUES (68,'moses@gmail.com','714940','pending','27100','Nairobi','Coast','2023-03-31 21:00:00','Nairobi'),(69,'moses@gmail.com','295482','pending','27100','Rift valley','Nairobi','2023-03-27 21:00:00',NULL),(70,'johniekyalo001@gmail.com','619841','pending','25500','Nairobi','Western','2023-04-05 21:00:00',NULL),(71,'johniekyalo001@gmail.com','314756','pending','25500','Rift valley','Nairobi','2023-03-29 21:00:00',NULL),(72,'moses@gmail.com','824238','pending','60000','Nairobi','Coast','2023-04-04 21:00:00',NULL),(89,'jose@gmail.com','670899','pending','66500','Nairobi','Nairobi','2023-03-29 16:40:15',NULL),(90,'jose@gmail.com','670899','pending','66500','Nairobi','Nairobi','2023-03-29 16:40:15',NULL),(91,'jose@gmail.com','670899','pending','66500','Nairobi','Nairobi','2023-03-29 16:40:16',NULL),(92,'jose@gmail.com','690138','pending','13500','Nairobi','Nairobi','2023-03-29 16:43:48',NULL),(93,'jose@gmail.com','690138','pending','13500','Nairobi','Thika','2023-03-29 16:43:48',NULL),(94,'jose@gmail.com','556681','pending','55000','Nairobi','Nairobi','2023-03-29 18:12:43',NULL),(95,'jose@gmail.com','556681','pending','55000','Nairobi','Nairobi','2023-03-29 18:12:43',NULL),(96,'jose@gmail.com','541780','pending','16000','Nairobi','Lodwar','2023-03-29 18:23:13',NULL),(97,'jose@gmail.com','541780','pending','16000','Nairobi','Kendu Bay','2023-03-29 18:23:14',NULL),(98,'jose@gmail.com','504036','pending','5500','Nairobi','Nairobi','2023-03-29 19:21:07',NULL),(99,'moses@gmail.com','941646','pending','20000','Kendu Bay','Nairobi','2023-03-29 19:31:36',NULL),(100,'jose@gmail.com','760854','pending','5500','Nairobi','Kisumu','2023-03-29 21:00:00',NULL),(101,'jose@gmail.com','797391','pending','5500','Nairobi','Kisumu','2023-03-29 21:00:00',NULL),(102,'jose@gmail.com','957053','Paid','8300','Nairobi','Nairobi','2023-03-29 21:00:00',NULL),(103,'jose@gmail.com','361128','Paid','5500','Kakamega','Nairobi','2023-03-31 21:00:00',NULL),(104,'jose@gmail.com','236304','Paid','5500','Nairobi','Sotik','2023-03-31 21:00:00',NULL),(105,'jose@gmail.com','424038','Cancelled','20000','Nairobi','Nyeri','2023-03-30 21:00:00',NULL),(106,'moses@gmail.com','171670','pending','75390','Nairobi','Kisumu','2023-04-12 21:00:00',NULL),(107,'moses@gmail.com','171670','pending','75390','Nairobi','Kisumu','2023-04-12 21:00:00',NULL),(108,'moses@gmail.com','778279','pending','8066','Nairobi','Malindi','2023-04-12 10:03:33',NULL),(109,'kodondi@gmail.com','855252','pending','32295','Kisumu','Nairobi','2023-04-12 12:22:09',NULL),(110,'odhismoses20@gmail.com','999936','pending','10500','Nairobi','Nairobi','2024-06-22 13:01:21',NULL),(111,'odhismoses20@gmail.com','817265','pending','10500','Nairobi','Nairobi','2024-06-22 13:01:21',NULL),(112,'odhismoses20@gmail.com','501390','pending','10500','Nairobi','Nairobi','2024-06-22 13:01:21',NULL),(113,'odhismoses20@gmail.com','964001','pending','10500','Nairobi','Nairobi','2024-06-22 13:01:21',NULL),(114,'odhismoses20@gmail.com','772056','pending','10500','Nairobi','Nairobi','2024-06-22 13:01:21',NULL),(115,'odhismoses20@gmail.com','232238','pending','145000','Nairobi','Nairobi','2024-07-30 21:00:00',NULL),(116,'odhismoses20@gmail.com','232238','pending','145000','Nairobi','Nairobi','2024-07-20 15:27:15',NULL),(117,'odhismoses20@gmail.com','284506','pending','145000','Nairobi','Nairobi','2024-07-30 21:00:00',NULL),(118,'odhismoses20@gmail.com','284506','pending','145000','Nairobi','Nairobi','2024-07-20 15:27:15',NULL),(119,'odhismoses20@gmail.com','704900','pending','145000','Nairobi','Nairobi','2024-07-30 21:00:00',NULL),(120,'odhismoses20@gmail.com','704900','pending','145000','Nairobi','Nairobi','2024-07-20 15:27:15',NULL);
 /*!40000 ALTER TABLE `orders` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -436,7 +435,7 @@ CREATE TABLE `transactions` (
   `transaction_id` varchar(70) NOT NULL,
   `checked` tinyint(1) NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -445,7 +444,7 @@ CREATE TABLE `transactions` (
 
 LOCK TABLES `transactions` WRITE;
 /*!40000 ALTER TABLE `transactions` DISABLE KEYS */;
-INSERT INTO `transactions` VALUES (3,364950,'ws_CO_30032023101232946114662464',1),(4,289172,'ws_CO_30032023101903945114662464',1),(5,957053,'',1),(6,361128,'',1),(7,236304,'ws_CO_30032023110203044114662464',1),(8,424038,'ws_CO_30032023111235831114662464',1),(9,171670,'',0),(10,778279,'',0),(11,855252,'',0);
+INSERT INTO `transactions` VALUES (3,364950,'ws_CO_30032023101232946114662464',1),(4,289172,'ws_CO_30032023101903945114662464',1),(5,957053,'',1),(6,361128,'',1),(7,236304,'ws_CO_30032023110203044114662464',1),(8,424038,'ws_CO_30032023111235831114662464',1),(9,171670,'',0),(10,778279,'',0),(11,855252,'',0),(12,704900,'',0);
 /*!40000 ALTER TABLE `transactions` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -458,4 +457,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-07-27  6:46:06
+-- Dump completed on 2024-07-28  8:51:31
