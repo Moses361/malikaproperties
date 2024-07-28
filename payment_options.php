@@ -1,4 +1,5 @@
 <?php
+session_start();
 include_once 'payment.php';
 if($_SERVER['REQUEST_METHOD'] == "POST"){
     $amount = $_POST["amount"];
@@ -16,7 +17,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
     // print($accepted_format);
     // die();
     $new_phone = "254".$accepted_format;
-    // print($amount.":".$new_phone);
+    print($amount.":".$new_phone);
     $message = $mpesa->stk_push($token, $amount, $new_phone);
     print($message);
     die();
@@ -39,8 +40,8 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
         <p class="lead">
         <form action="orders.php" class="form-login" method="post"><!-- form-login begin -->
             <label class="text-2xl"> Amount</label>                            
-            <input type="text" class="form-control mt-1" placeholder="amount" name="amount" required value="<?php print(total_price2()) ?>">   <br>                         
-            <input type="text" class="form-control mt-3" placeholder="Enter M-Pesa number to be billed" name="phone" required=""><br>
+            <input type="text" class="form-control mt-1" placeholder="amount" name="amount" required value="<?php echo $_SESSION['booking']['total']; ?>">   <br>                         
+            <input type="text" class="form-control mt-3" placeholder="Enter M-Pesa number to be billed" name="phone" required="" value="<?php echo $_SESSION['booking']['phone']; ?>"><br>
             <div class="flex justify-between">
                 <button type="cancel" class="btn btn-lg btn-warning" name="goBack" onclick="history.back()"><!-- btn btn-lg btn-primary btn-block begin -->
                     Back
