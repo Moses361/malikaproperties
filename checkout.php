@@ -1,5 +1,6 @@
 <?php 
-     $active='MY ACCOUNT';
+    session_start();
+    $active='MY ACCOUNT';
     include("includes/header.php");
 
     // redirect to home page if already logged in 
@@ -7,6 +8,11 @@
         header('location: index.php');
         exit();
     }
+    $sql = "SELECT customer_contact as phone FROM customers WHERE customer_email = '{$_SESSION['customer_email']}'";
+    $result = mysqli_query($con, $sql);
+    $row = mysqli_fetch_assoc($result);
+    $phone = $row['phone'];
+    $_SESSION['booking']['phone'] = $phone;
 ?>
 
 <div id="content"><!--content  begin -->
