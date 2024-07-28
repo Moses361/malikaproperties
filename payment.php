@@ -26,8 +26,8 @@ class MpesaApi
 		// product id
 		$this->id = $id;
 		// tocken requirements
-		$this->consumerKey     	 ="b5zUKrwKQ0uczvCzZQG2Kl72Scky9P0f";
-		$this->consumerSecret    ="ANoMXAaPCuHWFfdm";
+		$this->consumerKey     	 ="7iPrpUxqGY9QL5I1IhDEQVbQeCPfOxh6ojZQC2ZjZIC8SUaP";
+		$this->consumerSecret    ="HTbyVzGd3dkeDKoXSWwBAvTt4RPUb2LZkGYkGXX6rdCdvNPC9J534SLUQxq1yfnn";
 		$this->credentials     	 = base64_encode($this->consumerKey.":".$this->consumerSecret);		
 		//process requirements		
 		$this->BusinessShortCode = 174379;
@@ -36,8 +36,8 @@ class MpesaApi
 		$this->PartyB 			 = 600000;
 		$this->PhoneNumber       = "254708374149";
 		$this->CallBackURL       = "https://34e6-105-61-149-195.eu.ngrok.io/PAM/mpesa/index.php?orderId=".$id;
-		$this->AccountReference  = 'Rocket Delivery';
-		$this->TransactionDesc   = 'Cart Payment Online';		
+		$this->AccountReference  = 'Malika Properties';
+		$this->TransactionDesc   = 'Booking Payment';		
 		$this->PassKey           = 'bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919';
 		$this->Password          = base64_encode($this->BusinessShortCode.$this->PassKey.$this->Timestamp);
 		$this->Amount 			 = "";
@@ -112,7 +112,7 @@ class MpesaApi
 
 	public function setCallBackUrl($url)
 	{
-		$this->CallBackURL = $url."/PAM/mpesa/index.php?orderId=".$this->id;
+		$this->CallBackURL = $url."/malikaproperties/mpesa/index.php?orderId=".$this->id;
 	}
 
 	public function verifyTransactionDetails($transactionID){
