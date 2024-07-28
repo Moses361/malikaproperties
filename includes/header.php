@@ -73,8 +73,8 @@
          <div class="container mt-5"><!--container begin -->
             <div class="navbar-header"><!--navbar-header begin -->
                <a href="index.php" class="navbar-brand home"><!--navbar-brand home begin -->
-                  <img src="images/logo.png" alt="Malika Properties Logo" class="hidden-xs">
-                  <img src="images/logo.png" alt="Malika Properties Logo Mobile" class="visible-xs">
+                  <img src="images/logo.jpeg" alt="Malika Properties Logo" class="hidden-xs" style="height: 50px; width:170px; object-fit: contain;">
+                  <img src="images/logo.jpeg" alt="Malika Properties Logo Mobile" class="visible-xs" style="height: 50px; width:170px; object-fit: contain;">
                </a><!--navbar-brand home finish -->
                <button class="navbar-toggle" data-toggle="collapse" data-target="#navigation">
                   <span class="sr-only">Toggle Navigation</span>
