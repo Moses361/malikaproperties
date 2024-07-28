@@ -7,7 +7,7 @@ if (!isset($_POST['addToCart'])) {
     die("You are not allowed to access this route");
 }
 
-$db = mysqli_connect("localhost", "root", "", "pam");
+$db = mysqli_connect("localhost", "root", "", "malikaproperties");
 $ip_add = getRealIpUser();
 
 $p_id = $_POST['product_id'];

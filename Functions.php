@@ -1,13 +1,13 @@
 <?php 
 // connect to the database 
 // function connect_to_db(){
-    $con = mysqli_connect ("localhost","root","","pam");
+    $con = mysqli_connect ("localhost","root","","malikaproperties");
 
 
 // }
 
 function create_order($customer, $order_id, $amount, $origin, $destination, $order_date) {
-    $con = mysqli_connect ("localhost","root","","pam");
+    $con = mysqli_connect ("localhost","root","","malikaproperties");
     $payment_status = "pending";
     // print($order_date);
     // die();

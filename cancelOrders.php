@@ -1,5 +1,5 @@
 <?php
-$con = mysqli_connect ("localhost","root","","pam");
+$con = mysqli_connect ("localhost","root","","malikaproperties");
 // get order id
 $order_id = $_GET['order_id'];
 if(!$order_id){

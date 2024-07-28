@@ -16,14 +16,14 @@ $resultCode = $res['Body']['stkCallback']['ResultCode'];
 if ($resultCode == 0) {
     // Payment was successful
     // Do something here, such as update your database with the payment details
-    $con = mysqli_connect ("localhost","root","","pam");
+    $con = mysqli_connect ("localhost","root","","malikaproperties");
     $update_status = "UPDATE orders SET payment_status = 'paid' WHERE id = '$order_id';";
     $run_status = mysqli_query($con, $update_status);
     fwrite($oparand, $order_id."success".$run_status);
     fclose($oparand);
 
 } else {
-    $con = mysqli_connect ("localhost","root","","pam");
+    $con = mysqli_connect ("localhost","root","","malikaproperties");
     $update_status = "UPDATE orders SET payment_status = 'cancelled' WHERE id = '$order_id';";
     $run_status = mysqli_query($con, $update_status);
     fwrite($oparand, $order_id."failed".$run_status);

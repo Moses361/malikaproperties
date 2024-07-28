@@ -59,7 +59,7 @@
                        <?php 
                        
                           $total = 0;
-                          $con = mysqli_connect ("localhost","root","","pam");
+                          $con = mysqli_connect ("localhost","root","","malikaproperties");
                          
 
                              $intiator = $_SESSION['customer_email'];
