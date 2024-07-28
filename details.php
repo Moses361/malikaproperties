@@ -150,6 +150,7 @@ if (isset($_POST['addToCar'])) {
                             <!-- form-horizontal Begin -->
                              <h4 class="text-4xl font-bold">Complete your booking</h4>
                             <input type="hidden" value="<?=$product_id;?>" name="product_id"> <!--product id -->
+                            <input type="hidden" name="base_price" value="<?=$pro_price;?>">
                             <div class="text-2xl mt-5"><span class="font-bold">Base Price:</span> <span class="text-primary">Ksh. <span id="basePrice"><?=number_format($pro_price,"0", ".", ",");?> </span></span></div>
                             <div class="flex flex-col justify-between mt-3">
                                 <label for="num_units">Number of Units</label>
