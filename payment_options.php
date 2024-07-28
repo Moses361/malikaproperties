@@ -43,14 +43,9 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
             <input type="text" class="form-control mt-1" placeholder="amount" name="amount" required value="<?php echo $_SESSION['booking']['total']; ?>">   <br>                         
             <input type="text" class="form-control mt-3" placeholder="Enter M-Pesa number to be billed" name="phone" required="" value="<?php echo $_SESSION['booking']['phone']; ?>"><br>
             <div class="flex justify-between">
-                <button type="cancel" class="btn btn-lg btn-warning" name="goBack" onclick="history.back()"><!-- btn btn-lg btn-primary btn-block begin -->
-                    Back
-                </button><!-- btn btn-lg btn-primary btn-block finish -->
-
-                <button type="submit" class="btn btn-lg btn-primary" name="checkout"><!-- btn btn-lg btn-primary btn-block begin -->
-                    Pay
-                </button><!-- btn btn-lg btn-primary btn-block finish -->
-                </div>
+                <button type="cancel" class="px-10 text-primary outline-none focus:outline-none focus:text-black hover:text-black" name="goBack" onclick="history.back()"><i class="fa fa-chevron-left"></i></button>
+                <button type="submit" class="btn btn-lg btn-primary" name="checkout">Pay</button>
+            </div>
         </form><!-- form-login finish -->
         </p>  
     </div><!-- box Finish-->
