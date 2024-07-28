@@ -2,76 +2,33 @@
      $active='MY ACCOUNT';
     include("includes/header.php");
     if(isset($_POST['register'])){
-        // print("hello");
-        // die();
-        
         $c_name = $_POST['c_name'];
-    
         $s_name = $_POST['s_name'];
-        
         $c_email = $_POST['c_email'];
-        
         $c_pass = $_POST['c_pass'];
-        
+        $c_pass = $_POST['c__confirm_pass'];
         $c_county = $_POST['c_county'];
-        
         $c_contact = $_POST['c_contact'];
-        
-        $c_address = $_POST['c_address'];
-        $ref = $_POST['ref'];
-        
         $c_image = $_FILES['c_image']['name'];
-        
         $c_image_tmp = $_FILES['c_image']['tmp_name'];
-        
         $c_ip = getRealIpUser();
-        
+    
         move_uploaded_file($c_image_tmp,"customer/customer_images/$c_image");
-        
-        $insert_customer = "insert into customers (customer_name,second_name,customer_email,customer_pass,customer_county,customer_contact,customer_address,customer_image,customer_ip, customer_city) values ('$c_name','$s_name','$c_email','$c_pass','$c_county','$c_contact','$c_address','$c_image','$c_ip', 'nairobi')";
-        
-        $run_customer = mysqli_query($con,$insert_customer);
-    
-      
-        
-        $sel_cart = "select * from cart where ip_add='$c_ip'";
-        
-        $run_cart = mysqli_query($con,$sel_cart);
-        
-        $check_cart = mysqli_num_rows($run_cart);
-        $datet = date('Y-m-d H:i:s');
-        $discount = 200;
-        // update referal 
-        $insert_customer2 = "insert into referals (date, initiator, username, link_code, discount) values ('$datet','$ref','$c_email','$c_email','$discount')";    
-        $run_customer = mysqli_query($con,$insert_customer2);
-    
-    
-        
-        if($check_cart>0){
-            
-            /// If register have items in cart ///
-            
-            $_SESSION['customer_email']=$c_email;
-            
-            echo "<script>alert('You have been Registered Sucessfully')</script>";
-            
-            echo "<script>window.open('login.php','_self')</script>";
-            
-        }else{
-            
-            /// If register without items in cart ///
-            
-           /// $_SESSION['customer_email']=$c_email;
-            
-            echo "<script>alert('You have been Registered Sucessfully')</script>";
-            
-            echo "<script>window.open('index.php','_self')</script>";
-            
+        $insert_customer = "insert into customers (customer_name,second_name,customer_email,customer_pass,customer_county,customer_contact,customer_image,customer_ip) values ('$c_name','$s_name','$c_email','$c_pass','$c_county','$c_contact','$c_image','$c_ip')";
+        $register_customer = mysqli_query($con,$insert_customer);
+        if(!$register_customer){
+            $_SESSION['error']="There was an error in registering you. Please try again";
+            header("Location: customer_register.php");
+            return;
         }
-        
+
+        $last_insert_id = mysqli_insert_id($con);
+        $_SESSION['customer_email']=$c_email;
+        $_SESSION['customer_id']=$last_insert_id;
+
+        echo "<script>alert('You have been Registered Sucessfully')</script>";
+        echo "<script>window.open('index.php','_self')</script>";
     }
-
-
 ?>
 
 <div id="content"><!--content  begin -->
@@ -98,78 +55,69 @@
             
             <div class="box-header"><!--box-header  begin -->
               
-              <center>
-              
-                <h2>Register A New Account</h2>
-                <p class="text-muted"><!--text-muted  begin -->
-                
-                    <strong>Please Register Here!</strong>
-                
-                </p><!--text-muted  Finish -->
-               
-             </center>
-             <form action="" method="post" enctype="multipart/form-data"><!--form  begin -->
+              <div class="text-left">
+                    <h2 class="text-4xl">Create Your Account with Malika Properties</h2>
+                </div>
+
+             <form action="" method="post" enctype="multipart/form-data" class="mt-5"><!--form  begin -->
              
                 <div class="formm-group"><!--form-group  begin-->
                 
-                    <label>Name</label>
+                    <label>First Name</label>
                     <input type="text" class="form-control" name="c_name" required>
                 
                 </div><!--form-group  Finish -->
                  <div class="formm-group"><!--form-group  begin-->
                 
-                    <label>Second Name</label>
+                    <label>Last Name</label>
                     <input type="text" class="form-control" name="s_name" required>
                 
                 </div><!--form-group  Finish -->
-                 <div class="formm-group"><!--form-group  begin-->
+
+                <div class="formm-group"><!--form-group  begin-->
                 
                     <label>Email</label>
                     <input type="text" class="form-control" name="c_email" required>
                 
                 </div><!--form-group  Finish -->
-                 <div class="formm-group"><!--form-group  begin-->
+
+                <div class="formm-group"><!--form-group  begin-->
                 
-                    <label>Password</label>
-                    <input type="password" class="form-control" name="c_pass" required>
-                
+                <label>Phone</label>
+                <input type="text" class="form-control" name="c_contact" required>
+            
                 </div><!--form-group  Finish -->
-                 <div class="formm-group"><!--form-group  begin-->
+
+                <div class="formm-group"><!--form-group  begin-->
                 
                     <label>County</label>
                     <input type="text" class="form-control" name="c_county" required>
                 
                 </div><!--form-group  Finish -->
-                 <div class="formm-group"><!--form-group  begin-->
                 
-                    <label>Contact</label>
-                    <input type="text" class="form-control" name="c_contact" required>
-                
-                </div><!--form-group  Finish -->
-                 <div class="formm-group"><!--form-group  begin-->
-                
-                    <label>Address</label>
-                    <input type="text" class="form-control" name="c_address" required>
-                
-                </div><!--form-group  Finish -->
-                <div class="formm-group"><!--form-group  begin-->
-                
-                <label>referal email</label>
-                   <input type="text" class="form-control" name="ref" required>            
-                 </div>
-            <!--form-group  Finish -->
                  <div class="formm-group"><!--form-group  begin-->
                 
                     <label>Profile Picture</label>
                     <input type="file" class="form-control form-height-custom " name="c_image" required>
                 
                 </div><!--form-group  Finish -->
+
+                <div class="formm-group mt-2"><!--form-group  begin-->
                 
+                    <label>Password</label>
+                    <input type="password" class="form-control" name="c_pass" required>
                 
+                </div><!--form-group  Finish -->
+
+                <div class="formm-group mt-2"><!--form-group  begin-->
                 
-                <div class="text-center">
-                   
-                   <button type="submit" name="register"class="btn btn-primary">
+                    <label>Confirm Password</label>
+                    <input type="password" class="form-control" name="c_confirm_pass" required>
+                
+                </div><!--form-group  Finish -->
+                
+                <div class="text-center mt-10">
+                   <button type="submit" name="register"class="btn btn-primary rounded-full px-10 py-4">
                    <i class="fa fa-user-md"></i> Register
                    </button>
                 
