@@ -68,7 +68,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $message = $mpesa->stk_push($token, $amount, $new_phone);
         // print($message);
         $res = json_decode($message);
-        $transaction_id = "";
+        $checkout_request_id = "";
         if(!isset($res-> CheckoutRequestID)){
             die("Unable to reach the M-Pesa number you provided: ".$phone); // order processing must require a valid M-Pesa phone number
         }else{
@@ -77,7 +77,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
 
         // save transaction details
-        $sql = "INSERT INTO transactions(order_id, transaction_id) VALUES('$o_id', '$transaction_id');";
+        $sql = "INSERT INTO transactions(order_id, checkout_request_id) VALUES('$o_id', '$checkout_request_id');";
         $query = mysqli_query($con, $sql);
 
         if(!$query){

@@ -19,14 +19,14 @@
         require_once('../payment.php');
         // check order payment status
         function checkOrderPaymentStatus($con){
-            $sql = "SELECT * FROM transactions WHERE checked=false AND transaction_id != ''";
+            $sql = "SELECT * FROM transactions WHERE checked=false AND checkout_request_id != ''";
             $query = mysqli_query($con, $sql);
             if (!$query) die("Error getting transactions: ".mysqli_error($con));
 
             while(($data = mysqli_fetch_array($query))){
                 $order_id = $data['order_id'];
                 $mpesa = new MpesaApi($order_id);
-                $response = $mpesa->verifyTransactionDetails($data['transaction_id']);
+                $response = $mpesa->verifyTransactionDetails($data['checkout_request_id']);
                 $data = json_decode($response, true);
                 $resultCode = $data['ResultCode'];
                 if ($resultCode == 0){
