@@ -157,7 +157,6 @@ if (isset($_POST['addToCar'])) {
                                 <input type="number" id="num_units" name="num_units" placeholder="Number of Units to book" class="focus:outline-none border border-primary rounded-2xl px-3 py-5" value="1">
                             </div>
                             <div class="mt-3 text-2xl">Total: <span id="calculated_totals" class="text-primary">12,000 </span></div>
-                            <input type="hidden" value="total" id="total">
                             <p class="text-end w-full flex items-end justify-end pe-5">
                                 <button class="btn btn-primary px-10 py-5 fa fa-shopping-cart" name="addToCart" type="submit"> Checkout</button>
                             </p>
@@ -289,11 +288,9 @@ include("includes/footer.php");
     const calculateTotals = () => {
         const basePrice = document.getElementById('basePrice').innerText.replace(/,/g, '');
         const calculatedTotals = document.getElementById('calculated_totals');
-        const totalInput = document.getElementById('total');
         const numUnits = document.getElementById('num_units').value;
         const totalAmount = basePrice * numUnits;
         calculatedTotals.innerText = totalAmount.toLocaleString();
-        totalInput.value = totalAmount;
     }
 
     const numUnits = document.getElementById('num_units');
