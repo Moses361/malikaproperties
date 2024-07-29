@@ -62,6 +62,11 @@
             const data = await res.json();
             console.log("Data: ", data);
             const products = generateTemplates(data.data);
+            if(!products ){
+                document.querySelector('.productsList').innerHTML = "<h2 class='text-center font-bold font-3xl my-10'>No products matching that search criteria</h2>";
+                return;
+            }
+
             document.querySelector('.productsList').innerHTML = products;
         });
 

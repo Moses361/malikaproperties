@@ -107,7 +107,7 @@ if (isset($_POST['addToCar'])) {
                     </div><!-- row Finish -->
                     <hr class="h-1 bg-primary mt-5" />
                     <div class="mt-3 mb-3">
-                        <small class="text-2xl">30 Units</small>
+                        <small class="text-2xl"></small>
                         <h4 class="text-2xl font-bold">Ksh. <?=number_format($pro_price,"0", ".", ",");?></h4>
                     </div>
                     <!-- About the Listing -->
@@ -225,7 +225,7 @@ include("includes/footer.php");
 ?>
 
 <script src="js/jquery-331.min.js"></script>
-<script src="js/bootstrap-337.min.js"></script>
+<script src="js/bootstrap-337.min.js"></sc  ript>
 
 
 </body>
