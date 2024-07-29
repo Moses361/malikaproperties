@@ -69,7 +69,7 @@
             <div class="com-sm-6 col-md-3"><!-- com-sm-6 col-md-3 begin-->
                 <h4>Find Us</h4>
                 <p><!-- p begin-->
-                  <strong>Rocket Delivery.</strong>
+                  <strong>Malika Properties.</strong>
                   </br>Nairobi
                   </br>Tel
                   </br>0759930912
@@ -116,7 +116,7 @@
 <div id="copyright"><!-- copyright begin-->
     <div class="container"><!-- container begin-->
         <div class="col-md-6"><!-- col-md-6 begin-->
-            <p class="pull-left">&copy;2023 Rocket Delivery All Rights reserved</p>
+            <p class="pull-left">&copy;2023 Malika Properties All Rights reserved</p>
         </div><!-- col-md-6 Finish-->
          <div class="col-md-6"><!-- col-md-6 begin-->
             <p class="pull-right"> Designed and Managed by: Odhismoses</p>
