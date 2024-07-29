@@ -9,7 +9,8 @@
          $run_customer = mysqli_query($con, $get_customer);
          $row_customer = mysqli_fetch_array($run_customer);
          $customer_image = $row_customer['customer_image'];
-         $customer_name = $row_customer['customer_name'];
+         $first_name = $row_customer['customer_name'];
+         $last_name = $row_customer['second_name'];
 
          if(!isset($_SESSION['customer_email'])){
 
@@ -17,16 +18,15 @@
          }else{
 
             echo"
-            CS
                <center>
                
                   <img src='customer_images/$customer_image' class='img-responsive'>
                
                </center>
                </br>
-               <h3 class='panel-title' align='center'>
+               <h3 class='panel-title font-bold' align='center'>
 
-                     Name: $customer_name  
+                  $first_name $last_name
                
                </h3>
             

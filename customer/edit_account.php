@@ -44,7 +44,7 @@
     <div class="form-group"><!--form-group begin-->
     
         <label> Customer Image</label>
-        <input type="file" name="c_image" class="form-control form-height-custom">
+        <input type="file" name="c_image" class="form-control form-height-custom mb-10">
         <img class="img-responsive" src="customer_images/<?php echo $customer_image; ?>" alt="customer_image">
       
     </div><!--form-group finish-->
