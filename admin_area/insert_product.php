@@ -228,7 +228,7 @@ if(isset($_POST['submit'])){
     move_uploaded_file($temp_name2,"product_images/$product_img2");
     move_uploaded_file($temp_name3,"product_images/$product_img3");
     
-    $insert_product = "insert into products (p_cat_id,cat_id,date,product_title,product_img1,product_img2,product_img3,product_price,product_desc, product_keywords, product_label, location) values ('$product_cat','$cat',NOW(),'$product_title','$product_img1','$product_img2','$product_img3','$product_price','$product_desc', '$product_title', '$product_title', '$product_location')";
+    $insert_product = "insert into products (p_cat_id,date,product_title,product_img1,product_img2,product_img3,product_price,product_desc, product_keywords, product_label, location) values ('$product_cat',NOW(),'$product_title','$product_img1','$product_img2','$product_img3','$product_price','$product_desc', '$product_title', '$product_title', '$product_location')";
     
     $run_product = mysqli_query($con,$insert_product);
     
