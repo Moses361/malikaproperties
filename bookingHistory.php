@@ -136,8 +136,15 @@ function checkOrderPaymentStatus($con, $customer_id){
                               <td> <?php echo $date; ?> </td>
                               <td> 
                                   <?php 
-                                      $class = strtolower($payment_status);
-                                      echo "<span class='$class'> $payment_status </span>";
+                                    $class = '';
+                                    if ($row_order['is_paid'] == 0) {
+                                      $class = 'text-yellow-500';
+                                    } elseif ($row_order['is_paid'] == 1) {
+                                      $class = 'text-green-500';
+                                    } elseif ($row_order['is_paid'] == 2) {
+                                      $class = 'text-red-500';
+                                    }
+                                    echo "<span class='$class'> $payment_status </span>";
                                   ?> 
                               </td>
                               <td> 
