@@ -78,16 +78,13 @@
     
     move_uploaded_file ($c_image_tmp,"customer_images/$c_image");
     
-    $update_customer = "update customers set customer_name='$c_name',customer_email='$c_email',customer_county='$c_county',customer_address='$c_address',customer_contact='$c_contact',customer_image='$c_image' where customer_id='$update_id' ";
+    $update_customer = "update customers set customer_name='$c_name',customer_email='$c_email',customer_county='$c_county',customer_contact='$c_contact',customer_image='$c_image' where customer_id='$update_id' ";
     
     $run_customer = mysqli_query($con,$update_customer);
     
     if($run_customer){
         
-        echo "<script>alert('Your account has been updated, to complete the process, please login again')</script>";
-        
-        echo "<script>window.open('logout.php','_self')</script>";
-        
+        echo "<script>alert('Your account has been updated.')</script>";
     }
     
 }
