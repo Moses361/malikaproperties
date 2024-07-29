@@ -44,7 +44,11 @@ if(isset($_POST['login'])){
     }
     
     if($check_customer){
-        $_SESSION['customer_email']=$customer_email;
+        $row = mysqli_fetch_array($run_customer);
+
+        $_SESSION['customer_email']=$row['customer_email'];
+        $_SESSION['customer_id']=$row['customer_id'];
+        
         $_SESSION['success'] = "Login success";
         header('location: index.php');
     }
