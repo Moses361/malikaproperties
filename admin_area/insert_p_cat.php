@@ -13,7 +13,7 @@
         <ol class="breadcrumb"><!-- breadcrumb begin -->
             <li>
                 
-                <i class="fa fa-dashboard"></i> Dashboard / Insert Service Category
+                <i class="fa fa-dashboard"></i> Dashboard / Insert Property Category
                 
             </li>
         </ol><!-- breadcrumb finish -->
@@ -26,7 +26,7 @@
             <div class="panel-heading"><!-- panel-heading begin -->
                 <h3 class="panel-title"><!-- panel-title begin -->
                 
-                    <i class="fa fa-money fa-fw"></i> Insert Service Category
+                    <i class="fa fa-money fa-fw"></i> Insert Property Category
                 
                 </h3><!-- panel-title finish -->
             </div><!-- panel-heading finish -->
@@ -37,7 +37,7 @@
                     
                         <label for="" class="control-label col-md-3"><!-- control-label col-md-3 begin --> 
                         
-                        Service Category Title 
+                        Property Category Title 
                         
                         </label><!-- control-label col-md-3 finish --> 
                         
@@ -52,7 +52,7 @@
                     
                         <label for="" class="control-label col-md-3"><!-- control-label col-md-3 begin --> 
                         
-                        Service Category Description 
+                        Property Category Description 
                         
                         </label><!-- control-label col-md-3 finish --> 
                         

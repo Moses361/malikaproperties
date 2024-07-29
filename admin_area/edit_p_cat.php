@@ -35,7 +35,7 @@
         <ol class="breadcrumb"><!-- breadcrumb begin -->
             <li>
                 
-                <i class="fa fa-dashboard"></i> Dashboard / Edit Service Category
+                <i class="fa fa-dashboard"></i> Dashboard / Edit Property Category
                 
             </li>
         </ol><!-- breadcrumb finish -->
@@ -48,7 +48,7 @@
             <div class="panel-heading"><!-- panel-heading begin -->
                 <h3 class="panel-title"><!-- panel-title begin -->
                 
-                    <i class="fa fa-pencil fa-fw"></i> Edit Service Category
+                    <i class="fa fa-pencil fa-fw"></i> Edit Property Category
                 
                 </h3><!-- panel-title finish -->
             </div><!-- panel-heading finish -->
@@ -59,7 +59,7 @@
                     
                         <label for="" class="control-label col-md-3"><!-- control-label col-md-3 begin --> 
                         
-                        Service Category Title 
+                        Property Category Title 
                         
                         </label><!-- control-label col-md-3 finish --> 
                         
@@ -74,7 +74,7 @@
                     
                         <label for="" class="control-label col-md-3"><!-- control-label col-md-3 begin --> 
                         
-                        Service Category Description 
+                        Property Category Description 
                         
                         </label><!-- control-label col-md-3 finish --> 
                         

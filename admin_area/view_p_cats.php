@@ -13,7 +13,7 @@
         <ol class="breadcrumb"><!-- breadcrumb begin -->
             <li>
                 
-                <i class="fa fa-dashboard"></i> Dashboard / View Service Categories
+                <i class="fa fa-dashboard"></i> Dashboard / View Property Categories
                 
             </li>
         </ol><!-- breadcrumb finish -->
@@ -26,7 +26,7 @@
             <div class="panel-heading"><!-- panel-heading begin -->
                 <h3 class="panel-title"><!-- panel-title begin -->
                 
-                    <i class="fa fa-tags fa-fw"></i> View Service Categories
+                    <i class="fa fa-tags fa-fw"></i> View Property Categories
                 
                 </h3><!-- panel-title finish -->
             </div><!-- panel-heading finish -->
@@ -37,11 +37,11 @@
                         
                         <thead><!-- thead begin -->
                             <tr><!-- tr begin -->
-                                <th> Service Category ID </th>
+                                <th> Property Category ID </th>
                                 <th>  Category Title </th>
-                                <th> Service Category Desc </th>
-                                <th> Edit Service Category </th>
-                                <th> Delete Service Category </th>
+                                <th> Property Category Desc </th>
+                                <th> Edit </th>
+                                <th> Delete </th>
                             </tr><!-- tr finish -->
                         </thead><!-- thead finish -->
                         

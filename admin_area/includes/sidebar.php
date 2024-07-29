@@ -67,7 +67,7 @@
                 <li><!-- li begin -->
                     <a href="index.php?view_cats"><!-- a href begin -->
                         
-                        <i class="fa fa-fw fa-gear"></i> Service Categories
+                        <i class="fa fa-fw fa-gear"></i> Property Categories
                         
                         <span class="badge"><?php echo $count_p_categories; ?></span>
                         
@@ -104,7 +104,7 @@
             <li><!-- li begin -->
                 <a href="#" data-toggle="collapse" data-target="#products"><!-- a href begin -->
                         
-                        <i class="fa fa-fw fa-tag"></i> Services
+                        <i class="fa fa-fw fa-tag"></i> Properties
                         <i class="fa fa-fw fa-caret-down"></i>
                         
                 </a><!-- a href finish -->
@@ -114,7 +114,7 @@
                         <a href="index.php?insert_product"> Add New </a>
                     </li><!-- li finish -->
                     <li><!-- li begin -->
-                        <a href="index.php?view_products"> Added Services </a>
+                        <a href="index.php?view_products"> Added Properties </a>
                     </li><!-- li finish -->
                 </ul><!-- collapse finish -->
                 
@@ -123,7 +123,7 @@
             <li><!-- li begin -->
                 <a href="#" data-toggle="collapse" data-target="#p_cat"><!-- a href begin -->
                         
-                        <i class="fa fa-fw fa-edit"></i> Service Categories
+                        <i class="fa fa-fw fa-edit"></i> Property Categories
                         <i class="fa fa-fw fa-caret-down"></i>
                         
                 </a><!-- a href finish -->

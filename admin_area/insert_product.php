@@ -13,7 +13,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title> Insert Service </title>
+    <title> Insert Property </title>
 </head>
 <body>
     
@@ -25,7 +25,7 @@
             
             <li class="active"><!-- active Begin -->
                 
-                <i class="fa fa-dashboard"></i> Dashboard / Insert Service
+                <i class="fa fa-dashboard"></i> Dashboard / Insert Property
                 
             </li><!-- active Finish -->
             
@@ -45,7 +45,7 @@
                
                <h3 class="panel-title"><!-- panel-title Begin -->
                    
-                   <i class="fa fa-money fa-fw"></i> Insert Service
+                   <i class="fa fa-money fa-fw"></i> Insert Property
                    
                </h3><!-- panel-title Finish -->
                
@@ -57,7 +57,7 @@
                    
                    <div class="form-group"><!-- form-group Begin -->
                        
-                      <label class="col-md-3 control-label"> Service Title </label> 
+                      <label class="col-md-3 control-label"> Property Title </label> 
                       
                       <div class="col-md-6"><!-- col-md-6 Begin -->
                           
@@ -81,12 +81,12 @@
                    
                    <div class="form-group"><!-- form-group Begin -->
                        
-                       <label class="col-md-3 control-label"> Service Category </label> 
+                       <label class="col-md-3 control-label"> Property Category </label> 
                       <div class="col-md-6"><!-- col-md-6 Begin -->
                           
                           <select name="product_cat" class="form-control"><!-- form-control Begin -->
                               
-                              <option> Select a Category Service </option>
+                              <option> Select a Category Property </option>
                               
                               <?php 
                               
@@ -118,7 +118,7 @@
                    
                    <div class="form-group"><!-- form-group Begin -->
                        
-                      <label class="col-md-3 control-label"> Service Image 1 </label> 
+                      <label class="col-md-3 control-label"> Property Image 1 </label> 
                       
                       <div class="col-md-6"><!-- col-md-6 Begin -->
                           
@@ -130,7 +130,7 @@
                    
                    <div class="form-group"><!-- form-group Begin -->
                        
-                      <label class="col-md-3 control-label"> Service Image 2 </label> 
+                      <label class="col-md-3 control-label"> Property Image 2 </label> 
                       
                       <div class="col-md-6"><!-- col-md-6 Begin -->
                           
@@ -142,7 +142,7 @@
                    
                    <div class="form-group"><!-- form-group Begin -->
                        
-                      <label class="col-md-3 control-label"> Service Image 3 </label> 
+                      <label class="col-md-3 control-label"> Property Image 3 </label> 
                       
                       <div class="col-md-6"><!-- col-md-6 Begin -->
                           
@@ -154,7 +154,7 @@
                    
                    <div class="form-group"><!-- form-group Begin -->
                        
-                      <label class="col-md-3 control-label"> Service Price </label> 
+                      <label class="col-md-3 control-label"> Property Price </label> 
                       
                       <div class="col-md-6"><!-- col-md-6 Begin -->
                           
@@ -164,7 +164,7 @@
                        
                    </div><!-- form-group Finish -->  
                    
-                      <label class="col-md-3 control-label"> Service Desc </label> 
+                      <label class="col-md-3 control-label"> Property Desc </label> 
                       
                       <div class="col-md-6"><!-- col-md-6 Begin -->
                           
@@ -180,7 +180,7 @@
                       
                       <div class="col-md-6"><!-- col-md-6 Begin -->
                           
-                          <input name="submit" value="Insert Service" type="submit" class="btn btn-primary form-control">
+                          <input name="submit" value="Insert Property" type="submit" class="btn btn-primary form-control">
                           
                       </div><!-- col-md-6 Finish -->
                        

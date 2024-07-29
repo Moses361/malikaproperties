@@ -119,7 +119,7 @@
                     <div class="col-xs-9 text-right"><!-- col-xs-9 text-right begin -->
                         <div class="huge"> <?php echo $count_p_categories; ?> </div>
                            
-                        <div> Service Categories </div>
+                        <div> Property Categories </div>
                         
                     </div><!-- col-xs-9 text-right finish -->
                     

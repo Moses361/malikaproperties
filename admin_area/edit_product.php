@@ -63,7 +63,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title> Insert Service </title>
+    <title> Insert Property </title>
 </head>
 <body>
     
@@ -75,7 +75,7 @@
             
             <li class="active"><!-- active Begin -->
                 
-                <i class="fa fa-dashboard"></i> Dashboard / Edit Service
+                <i class="fa fa-dashboard"></i> Dashboard / Edit Property
                 
             </li><!-- active Finish -->
             
@@ -95,7 +95,7 @@
                
                <h3 class="panel-title"><!-- panel-title Begin -->
                    
-                   <i class="fa fa-money fa-fw"></i> Insert Service
+                   <i class="fa fa-money fa-fw"></i> Insert Property
                    
                </h3><!-- panel-title Finish -->
                
@@ -107,7 +107,7 @@
                    
                    <div class="form-group"><!-- form-group Begin -->
                        
-                      <label class="col-md-3 control-label"> Service Title </label> 
+                      <label class="col-md-3 control-label"> Property Title </label> 
                       
                       <div class="col-md-6"><!-- col-md-6 Begin -->
                           
@@ -119,7 +119,7 @@
                    
                    <div class="form-group"><!-- form-group Begin -->
                        
-                      <label class="col-md-3 control-label"> ServiceCategory </label> 
+                      <label class="col-md-3 control-label"> PropertyCategory </label> 
                       
                       <div class="col-md-6"><!-- col-md-6 Begin -->
                           
@@ -154,7 +154,7 @@
                    </div><!-- form-group Finish -->
                    <div class="form-group"><!-- form-group Begin -->
                        
-                      <label class="col-md-3 control-label"> Service Image 1 </label> 
+                      <label class="col-md-3 control-label"> Property Image 1 </label> 
                       
                       <div class="col-md-6"><!-- col-md-6 Begin -->
                           
@@ -170,7 +170,7 @@
                    
                    <div class="form-group"><!-- form-group Begin -->
                        
-                      <label class="col-md-3 control-label"> Service Image 2 </label> 
+                      <label class="col-md-3 control-label"> Property Image 2 </label> 
                       
                       <div class="col-md-6"><!-- col-md-6 Begin -->
                           
@@ -186,7 +186,7 @@
                    
                    <div class="form-group"><!-- form-group Begin -->
                        
-                      <label class="col-md-3 control-label"> Service Image 3 </label> 
+                      <label class="col-md-3 control-label"> Property Image 3 </label> 
                       
                       <div class="col-md-6"><!-- col-md-6 Begin -->
                           
@@ -202,7 +202,7 @@
                    
                    <div class="form-group"><!-- form-group Begin -->
                        
-                      <label class="col-md-3 control-label"> Service Price </label> 
+                      <label class="col-md-3 control-label"> Property Price </label> 
                       
                       <div class="col-md-6"><!-- col-md-6 Begin -->
                           
@@ -214,7 +214,7 @@
                    
                    <div class="form-group"><!-- form-group Begin -->
                        
-                      <label class="col-md-3 control-label"> Service Desc </label> 
+                      <label class="col-md-3 control-label"> Property Desc </label> 
                       
                       <div class="col-md-6"><!-- col-md-6 Begin -->
                           

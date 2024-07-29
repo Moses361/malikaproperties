@@ -13,7 +13,7 @@
         <ol class="breadcrumb"><!-- breadcrumb begin -->
             <li class="active"><!-- active begin -->
                 
-                <i class="fa fa-dashboard"></i> Dashboard / View Service
+                <i class="fa fa-dashboard"></i> Dashboard / View Property
                 
             </li><!-- active finish -->
         </ol><!-- breadcrumb finish -->
@@ -26,7 +26,7 @@
             <div class="panel-heading"><!-- panel-heading begin -->
                <h3 class="panel-title"><!-- panel-title begin -->
                
-                   <i class="fa fa-tags"></i>  View Service
+                   <i class="fa fa-tags"></i>  View Property
                 
                </h3><!-- panel-title finish --> 
             </div><!-- panel-heading finish -->
@@ -37,15 +37,15 @@
                         
                         <thead><!-- thead begin -->
                             <tr><!-- tr begin -->
-                                <th> Service ID: </th>
-                                <th> Service Title: </th>
-                                <th> Service Image: </th>
-                                <th> Service Price: </th>
-                                <th> Service Sold: </th>
+                                <th> Property ID </th>
+                                <th> Property Title </th>
+                                <th> Property Image </th>
+                                <th> Property Price </th>
+                                <th> Property Sold </th>
                                 
-                                <th> Service Date: </th>
-                                <th> Service Delete: </th>
-                                <th> Service Edit: </th>
+                                <th> Listing Date: </th>
+                                <th> Edit </th>
+                                <th> Delete </th>
                             </tr><!-- tr finish -->
                         </thead><!-- thead finish -->
                         
@@ -96,21 +96,21 @@
                                 <td> <?php echo $pro_date ?> </td>
                                 <td> 
                                      
-                                     <a href="index.php?delete_product=<?php echo $pro_id; ?>">
-                                     
-                                        <i class="fa fa-trash-o"></i> Delete
-                                    
-                                     </a> 
-                                     
-                                </td>
-                                <td> 
-                                     
                                      <a href="index.php?edit_product=<?php echo $pro_id; ?>">
                                      
                                         <i class="fa fa-pencil"></i> Edit
                                     
                                      </a> 
                                     
+                                </td>
+                                <td> 
+                                     
+                                     <a href="index.php?delete_product=<?php echo $pro_id; ?>">
+                                     
+                                        <i class="fa fa-trash-o"></i> Delete
+                                    
+                                     </a> 
+                                     
                                 </td>
                             </tr><!-- tr finish -->
                             
