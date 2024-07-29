@@ -95,7 +95,7 @@
                      </li>
                   </ul><!--nav navbar-nav left  finish -->
                   <ul class="nav navbar-nav left text-black">
-                     <li><a href="customer/my_account.php"><?php echo $_SESSION['customer_email']; ?></a></li>
+                     <li><a href="customer/my_account.php?edit_account"><?php echo $_SESSION['customer_email']; ?></a></li>
                         <?php
                            if(isset($_SESSION['customer_email'])){
                         ?>

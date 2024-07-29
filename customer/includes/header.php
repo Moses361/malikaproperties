@@ -34,158 +34,94 @@
 
 ?>
 
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bliss Gardens</title>
+    <title>MALIKA INVESTEMENTS</title>
     <link rel="stylesheet" href="styles/bootstrap-337.min.css">
     <link rel="stylesheet" href="font-awsome/css/font-awesome.min.css">
     <link rel="stylesheet" href="styles/style.css">
-    
+    <style type="text/tailwindcss">
+       @layer utilities {
+          .content-auto {
+             content-visibility: auto;
+            }
+         }
+         </style>
+
+   <script src="https://cdn.tailwindcss.com"></script>
+   <script>
+      tailwind.config = {
+         theme: {
+         extend: {
+            colors: {
+               primary: '#4fbfa8',
+            }
+         }
+         }
+      }
+   </script>
+
 </head>
 <body>
-     <div id="top"><!--Top begin -->
-
-         <div class="container"><!--container begin -->
-         
-             <div class="col-md-6 offer"><!--offer begin -->
-
-                <a href="#" class="btn btn-success btn-sm">
+     <div id="navbar" class="navbar navbar-default"><!--navbar navbar-default  begin -->
+         <div class="container mt-5"><!--container begin -->
+            <div class="navbar-header"><!--navbar-header begin -->
+               <a href="../index.php" class="navbar-brand home"><!--navbar-brand home begin -->
+                  <img src="../images/logo.jpeg" alt="Malika Properties Logo" class="hidden-xs" style="height: 50px; width:170px; object-fit: contain;">
+                  <img src="../images/logo.jpeg" alt="Malika Properties Logo Mobile" class="visible-xs" style="height: 50px; width:170px; object-fit: contain;">
+               </a><!--navbar-brand home finish -->
+               <button class="navbar-toggle" data-toggle="collapse" data-target="#navigation">
+                  <span class="sr-only">Toggle Navigation</span>
+                  <i class="fa fa-align-justify"></i>  
+               </button>
+            </div><!--navbar-header  finish -->
+            <div class="" id="navigation"><!--navbar-collapse collapse  begin -->
+               <div class="paddig-nav flex justify-between"><!--pig-nav  Begin -->
+                  <ul class="nav navbar-nav left text-black"><!--nav navbar-nav left  Begin -->
+                     <li class="<?php if($active=='HOME') echo"active"; ?>">
+                        <a href="../index.php">Home</a>
+                     <li>
+                     <li class="<?php if($active=='SHOPPING CART') echo"active"; ?>">
+                           <a href="../bookingHistory.php">Booking History</a>
+                     </li>
+                     <li class="<?php if($active=='CONTACT US') echo"active"; ?>">
+                        <a href="../contact.php">CONTACT US</a> 
+                     </li>
+                  </ul><!--nav navbar-nav left  finish -->
+                  <ul class="nav navbar-nav left text-black">
+                     <li><a href="../customer/my_account.php?edit_account"><?php echo $_SESSION['customer_email']; ?></a></li>
+                        <?php
+                           if(isset($_SESSION['customer_email'])){
+                        ?>
+                     <li>
+                        <a href="../logout.php" class="no-underline"><button class="btn border border-primary text-primary hover:border-none hover:text-white hover:bg-primary">Logout</button> </a>
+                     </li>
+                        <?php 
+                           };
+                           if(!isset($_SESSION['customer_email'])){
+                        ?>
+                     <li style="display: flex; align-items: center;">
+                        <a href="../login.php" class="no-underline"><button class="btn border text-white bg-primary border-none hover:border-ring px-8 py-3">Login</button> </a> or 
+                        <a href="../customer_register.php" class="no-underline"><button class="btn border border-primary text-primary hover:border-none hover:text-white hover:bg-primary">Register</button> </a>
+                     </li>
+                        <?php
+                           };
+                        ?>
+                  </ul>
+               </div><!--paddig-nav  finish -->
+            </div><!--collapse clearfix  finish --> 
                 
-                      <?php 
-                  
-                     if(!isset($_SESSION['customer_email'])){
-                       
-                       echo "Welcome: Guest";
-                       
-                   }else{
-                       
-                       echo "Welcome: " . $_SESSION['customer_email'] . "";
-                       
-                   }
-                  
-                  ?>
-                
-                </a>
-                <a href="login.php"><?php  items();  ?> Items In Your Cart | Total Price: Ksh.<?php total_price(); ?></a>
-
-             </div><!--offer Finish -->
-
-             <div class="col-md-6"><!--col-md-6 begin -->
-                <ul class="menu"><!--menu begin -->
-                    <li>
-                       <a href="../customer_register.php">Register</a>
-                    </li>
-                    <li>
-                        <a href="my_account.php">My Account</a>
-                    </li>
-                    <li>
-                         <a href="../bookingHistory.php">Go To Cart</a>
-                    </li>
-                    <li>
-                          <a href="../login.php">
-                          
-                             <?php 
-                          
-                               if(!isset($_SESSION['customer_email'])){
-                       
-                                  echo "<a href='login.php'>Login</a>";
-                       
-                                }else{
-                       
-                                   echo " <a href='logout.php'>Log Out</a> ";
-                       
-                                }
-                          
-                            ?>
-                          
-                          
-                          </a>
-                    </li>
-                
-                </ul><!--menu Finish -->
-             </div><!--col-md-6 Finish -->
-
-         </div> <!--container  Finish -->       
-
-     </div><!--Top Finish -->
-     <div id="navbar" class="navbar navbar-default"><!--navbar navbar-default  begin --> 
-          <div class="container"><!--container begin -->
-               <diV class="navbar-header"><!--navbar-header begin -->
-               
-                  <a href="../index.php" class="navbar-brand home"><!--navbar-brand home begin -->
-                    <img src="/images/ecom-store-logo.jpeg" alt="M-Dev-Store Logo" class="hidden-xs">
-                    <img src="/images/ecom-store-logo-mobile.png" alt="M-Dev-Store Logo Mobile" class="visible-xs">
-
-                  </a><!--navbar-brand home finish -->
-                  <button class="navbar-toggle" data-toggle="collapse" data-target="#navigation">
-                     <span class="sr-only">Toggle Navigation</span>
-                     <i class="fa fa-align-justify"></i>  
-                  </button>
-                  <button class="navbar-toggle" data-toggle="collapse" data-target="#search">
-                     <span class="sr-only">Toggle search</span>
-                     <i class="fa fa-search"></i>  
-                  </button>
-
-                </diV><!--navbar-header  finish -->
-                <div class="navbar-collapse collapse" id="navigation"><!--navbar-collapse collapse  begin -->
-                      <div class="paddig-nav"><!--paddig-nav  Begin -->
-                           <ul class="nav navbar-nav left"><!--nav navbar-nav left  Begin -->
-                              <li>
-                                 <a href="../index.php">HOME</a>
-                              </li>
-                              <li>
-                                  <a href="../shop.php">SHOP</a>
-                              </li>
-                              <li>
-                                  <a href="../bookingHistory.php">SHOPPING CART</a>
-                              </li>
-                              <li class="active">
-                                 <a href="my_account.php">MY ACCOUNT</a>
-                              </li>
-                              <li>
-                                <a href="../contact.php">CONTACT US</a> 
-                              </li>
-                           
-                           </ul><!--nav navbar-nav left  finish -->
-                       
-                      </div><!--paddig-nav  finish -->
-                        <a href="../cat.php" class="btn navbar-btn btn-primary right"><!--btn navbar-btn btn-primary right Begin -->
-                            <i class="fa fa-shoping-cart"></i>
-                               <span><?php  items();?> Items In Your Cart</span>
-                        </a><!--btn navbar-btn btn-primary right Finish -->
-                        <div class="navbar-collapse collapse right"><!--navbar-collapse collapse right  Begin -->
-                        
-                            <button class="btn btn-primary navbar-btn" type="button" data-toggle="collapse" data-target="#search"><!--btn btn-primary navbar-btn  finish -->
-                                <span class="sr-only">Toggle Search</span>
-                                <i class="fa fa-search"></i>
-                            </button><!--btn btn-primary navbar-btn  finish -->
-                           
-
-                        </div><!--navbar-collapse collapse right  finish -->
-                           <div class="collapse clearfix" id="search"><!--collapse clearfix  Begin -->
-                        <form method="get" action="results.php" class="navbar-form">
-                        
-                            <div class="input group"><!--input group  Begin -->
-                             <span class="input-group btn">
-                                <input type="text" class="form control" placeholder="search" name="user-query" required>
-                                 
-                                 <button type="submit" name="search" class="btn btn-primary">
-                                   <i class="fa fa-search"></i>
-                                   
-                                 </button> 
-                             </span>   
-                            </div><!--input group  finish -->
-
-                        </form>
-                     
-                     </div><!--collapse clearfix  finish --> 
-                
-                </div><!--navbar-collapse collapse  finish -->
+         </div><!--navbar-collapse collapse  finish -->
                     
-          </div><!--container Finish -->
+      </div><!--container Finish -->
 
-     </div><!--navbar navbar-default  Finish -->
+   </div><!--navbar navbar-default  Finish -->
+
+
+    
