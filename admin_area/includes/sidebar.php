@@ -111,10 +111,10 @@
                 
                 <ul id="products" class="collapse"><!-- collapse begin -->
                     <li><!-- li begin -->
-                        <a href="index.php?insert_product"> Insert Service </a>
+                        <a href="index.php?insert_product"> Add New </a>
                     </li><!-- li finish -->
                     <li><!-- li begin -->
-                        <a href="index.php?view_products"> View Services </a>
+                        <a href="index.php?view_products"> Added Services </a>
                     </li><!-- li finish -->
                 </ul><!-- collapse finish -->
                 
@@ -130,30 +130,10 @@
                 
                 <ul id="p_cat" class="collapse"><!-- collapse begin -->
                     <li><!-- li begin -->
-                        <a href="index.php?insert_p_cat"> Insert Service Category </a>
+                        <a href="index.php?insert_p_cat"> Add New </a>
                     </li><!-- li finish -->
                     <li><!-- li begin -->
-                        <a href="index.php?view_p_cats"> View Service Categories </a>
-                    </li><!-- li finish -->
-                </ul><!-- collapse finish -->
-                
-            </li><!-- li finish -->
-            
-            
-            <li><!-- li begin -->
-                <a href="#" data-toggle="collapse" data-target="#slides"><!-- a href begin -->
-                        
-                        <i class="fa fa-fw fa-gear"></i> Slides
-                        <i class="fa fa-fw fa-caret-down"></i>
-                        
-                </a><!-- a href finish -->
-                
-                <ul id="slides" class="collapse"><!-- collapse begin -->
-                    <li><!-- li begin -->
-                        <a href="index.php?insert_slide"> Insert Slide </a>
-                    </li><!-- li finish -->
-                    <li><!-- li begin -->
-                        <a href="index.php?view_slides"> View Slides </a>
+                        <a href="index.php?view_p_cats"> Added Categories</a>
                     </li><!-- li finish -->
                 </ul><!-- collapse finish -->
                 
@@ -161,12 +141,12 @@
             
             <li><!-- li begin -->
                 <a href="index.php?view_customers"><!-- a href begin -->
-                    <i class="fa fa-fw fa-users"></i> View Customers
+                    <i class="fa fa-fw fa-users"></i> Customers
                 </a><!-- a href finish -->
             </li><!-- li finish -->
             <li><!-- li begin -->
                 <a href="index.php?messages"><!-- a href begin -->
-                    <i class="fa fa-fw fa-envelope"></i> View Messages
+                    <i class="fa fa-fw fa-envelope"></i> Messages
                 </a><!-- a href finish -->
             </li><!-- li finish -->
             <li><!-- li begin -->
@@ -179,33 +159,20 @@
                 
                 <ul id="terms" class="collapse"><!-- collapse begin -->
                     <li><!-- li begin -->
-                        <a href="index.php?insert_terms"> Insert Term </a>
+                        <a href="index.php?insert_terms"> New </a>
                     </li><!-- li finish -->
                     <li><!-- li begin -->
-                        <a href="index.php?view_terms"> View Terms </a>
+                        <a href="index.php?view_terms"> Added Terms </a>
                     </li><!-- li finish -->
                 </ul><!-- collapse finish -->
                 
             </li><!-- li finish -->
-             <li><!-- li begin -->
-                <a href="index.php?edit_css"><!-- a href begin -->
-                    <i class="fa fa-fw fa-pencil"></i> CSS Editor
-                </a><!-- a href finish -->
-            </li><!-- li finish -->
             
             <li><!-- li begin -->
                 <a href="index.php?view_orders"><!-- a href begin -->
-                    <i class="fa fa-fw fa-book"></i> View Orders
+                    <i class="fa fa-fw fa-book"></i> Orders
                 </a><!-- a href finish -->
             </li><!-- li finish -->
-
-            <li><!-- li begin -->
-                <a href="index.php?view_referrals"><!-- a href begin -->
-                    <i class="fa fa-fw fa-link"></i> Referrals
-                </a><!-- a href finish -->
-            </li><!-- li finish -->
-            
-      
             
             <li><!-- li begin -->
                 <a href="#" data-toggle="collapse" data-target="#users"><!-- a href begin -->
@@ -217,13 +184,10 @@
                 
                 <ul id="users" class="collapse"><!-- collapse begin -->
                     <li><!-- li begin -->
-                        <a href="index.php?insert_user"> Insert User </a>
+                        <a href="index.php?insert_user">  Add New </a>
                     </li><!-- li finish -->
                     <li><!-- li begin -->
-                        <a href="index.php?view_users"> View Users </a>
-                    </li><!-- li finish -->
-                    <li><!-- li begin -->
-                        <a href="index.php?user_profile=<?php echo $admin_id; ?>"> Edit User Profile </a>
+                        <a href="index.php?view_users"> Added Users </a>
                     </li><!-- li finish -->
                 </ul><!-- collapse finish -->
                 
