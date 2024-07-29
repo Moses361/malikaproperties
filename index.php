@@ -33,13 +33,10 @@
 
  <div id="content" class="container"><!--container begin -->
 
-<div class="grid grid-cols-4 gap-x-5"><!--row  begin -->
+<div class="grid grid-cols-4 gap-x-5 productsList"><!--row  begin -->
     <?php 
-    
        getPro();
-    
     ?>
-   
 </div><!--row  Finish -->
 
 </div><!--row  container -->
@@ -62,9 +59,44 @@
             const max_price = formData.get('max_price');
             const url = `search.php?search=${search}&category=${category}&max_price=${max_price}`;
             const res = await fetch(url);
-            const data = res.json();
-            console.log(data);
+            const data = await res.json();
+            console.log("Data: ", data);
+            const products = generateTemplates(data.data);
+            document.querySelector('.productsList').innerHTML = products;
         });
+
+        function generateTemplates(products){
+            let html = ``;
+            for(let product of products){
+                html += `
+                <div class='col-md-4 col-sm-6 single'>
+                    <div class='product p-2 rounded'>
+                    <a href='details.php?pro_id=${product.product_id}'>
+                        <img class='img-responsive rounded-md' src='admin_area/product_images/${product.product_img1}'>
+                    </a>
+                        <div class='text-left py-5 px-5'>
+                            <h4 class='text-red-500 font-bold text-2xl'>Ksh. ${product.product_price}</h4>
+                            <h3 class='pt-2 text-3xl'>
+                                <a href='details.php?pro_id=${product.product_id}'>
+                                    ${product.product_label}
+                                </a>
+                            </h3>
+                            <div class='pt-2 cursor-pointer text-primary'><i class='fa fa-map-marker'> </i> Nairobi Area </div>
+                            <p class='button pt-2 flex justify-between'>
+                                <a class='btn btn-default' href='details.php?pro_id=${product.product_id}'>
+                                    View Listing
+                                </a>
+                                <a class='btn btn-primary' href='details.php?pro_id=${product.product_id}'>
+                                    <i class='fa fa-shopping-cart'></i> Book
+                                </a>
+                            </p>
+                            </div>
+                    </div>
+                </div>
+                `;
+                return html;
+            }
+        }
      </script>
 </body>
 </html>

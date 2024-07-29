@@ -75,6 +75,7 @@
                                 <th>Email </th>
                                 <th>Phone</th>
                                 <th>Unit</th>
+                                <th>Location</th>
                                 <th>Units Booked</th>
                                 <th>Unit Price</th>
                                 <th>Total Amount </th>
@@ -89,7 +90,7 @@
                                 // checkOrderPaymentStatus($con);
                                 $sql = "SELECT orders.*, 
                                         customers.customer_name, customers.second_name, customers.customer_email, customers.customer_contact, 
-                                        products.product_id, products.product_title, products.product_img1, products.product_price, 
+                                        products.product_id, products.product_title, products.product_img1, products.product_price, products.location,
                                         transactions.paid as is_paid, transactions.checked as is_checked
                                         FROM orders INNER JOIN products ON orders.product_id = products.product_id
                                         INNER JOIN customers ON orders.customer_id = customers.customer_id
@@ -105,6 +106,7 @@
                                     $unit = $row_order['product_title'];
                                     $units_booked = $row_order['num_units'];
                                     $unit_price = $row_order['product_price'];
+                                    $location = $row_order['location'];
                                     $total_amount = $unit_price * $units_booked;
                                     $date = $row_order['created_at'];
                                     // format date in terms of  
@@ -118,6 +120,7 @@
                                 <td> <?php echo $customer_email; ?> </td>
                                 <td> <?php echo $customer_phone; ?> </td>
                                 <td> <?php echo $unit; ?> </td>
+                                <td> <?php echo $location; ?> </td>
                                 <td> <?php echo $units_booked; ?> </td>
                                 <td> <?php echo $unit_price; ?> </td>
                                 <td> <?php echo $total_amount; ?> </td>

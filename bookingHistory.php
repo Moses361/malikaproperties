@@ -6,20 +6,6 @@ include("includes/header.php");
 if(!isset($_SESSION['customer_email'])){
   die("You need to be logged in to access your booking history");
 }
-
-$intiator = trim($_SESSION['customer_email']);
-
-$discount = 0;
-$select_cart = "SELECT  * from referals where initiator  ='$intiator' AND redeemed=false;";
-$run_cart2 = mysqli_query($con, $select_cart);
-if(mysqli_num_rows($run_cart2) > 0){
-  while($data = mysqli_fetch_array($run_cart2)){
-    $discount += $data['discount'];
-  }
-}
-// die();
-
-
 ?>
 
 <div id="content"><!--content  begin -->
@@ -47,10 +33,6 @@ if(mysqli_num_rows($run_cart2) > 0){
 
           <?php
 
-          $ip_add = getRealIpUser();
-          $select_cart = "select * from cart where ip_add='$ip_add'";
-          $run_cart = mysqli_query($con, $select_cart);
-          $count = mysqli_num_rows($run_cart);
           ?>
           <div class="table-responsive"><!--table-responsive   begin -->
             <table class="table" id="myTable"><!--table   begin -->
@@ -64,6 +46,7 @@ if(mysqli_num_rows($run_cart2) > 0){
                   <th>SubTotal</th>
                 </tr><!--tr   finish -->
               </thead>
+              
               <tbody><!--tbody  begin -->
                 <?php
                 $total = 0;
@@ -147,11 +130,7 @@ if(mysqli_num_rows($run_cart2) > 0){
         }
 
       }
-
-
-
       @$up_cart = update_cart();
-      ;
       ?>
     </div><!--cart col-md-12   Finish -->
   </div><!--container   Finish -->

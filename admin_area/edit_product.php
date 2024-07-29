@@ -111,7 +111,7 @@
                       
                       <div class="col-md-6"><!-- col-md-6 Begin -->
                           
-                          <input name="product_title" type="text" class="form-control" required value="<?php echo $p_title; ?>">
+                          <input name="product_title" type="text" class="form-control"  value="<?php echo $p_title; ?>">
                           
                       </div><!-- col-md-6 Finish -->
                        
@@ -152,16 +152,13 @@
                       </div><!-- col-md-6 Finish -->
                        
                    </div><!-- form-group Finish -->
-                   
-                   
-                   
                    <div class="form-group"><!-- form-group Begin -->
                        
                       <label class="col-md-3 control-label"> Service Image 1 </label> 
                       
                       <div class="col-md-6"><!-- col-md-6 Begin -->
                           
-                          <input name="product_img1" type="file" class="form-control" required>
+                          <input name="product_img1" type="file" class="form-control" >
                           
                           <br>
                           
@@ -209,7 +206,7 @@
                       
                       <div class="col-md-6"><!-- col-md-6 Begin -->
                           
-                          <input name="product_price" type="text" class="form-control" required value="<?php echo $p_price; ?>">
+                          <input name="product_price" type="text" class="form-control"  value="<?php echo $p_price; ?>">
                           
                       </div><!-- col-md-6 Finish -->
                        

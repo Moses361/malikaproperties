@@ -38,26 +38,13 @@ if(isset($_POST['login'])){
     
     $check_customer = mysqli_num_rows($run_customer);
     
-    $select_cart = "select * from cart where ip_add='$get_ip'";
-    
-    $run_cart = mysqli_query($con,$select_cart);
-    
-    $check_cart = mysqli_num_rows($run_cart);
-    
-    if($check_customer==0){
+    if(!$check_customer){
         echo "<script>alert('Invalid email or password')</script>";
         exit();
     }
     
-    if($check_customer==1 AND $check_cart==0){
-        
+    if($check_customer){
         $_SESSION['customer_email']=$customer_email;
-        $_SESSION['success'] = "Login success";
-        header('location: index.php');
-    }else{
-        
-        $_SESSION['customer_email']=$customer_email;
-        
         $_SESSION['success'] = "Login success";
         header('location: index.php');
     }
