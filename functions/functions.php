@@ -84,7 +84,6 @@ function getPro()
         $pro_price = $row_products['product_price'];
         $pro_price = number_format($pro_price, "0", ".", ",");
         $pro_img1 = $row_products['product_img1'];
-        $location = $row_products['location'];
 
         echo "
         <div class='col-md-4 col-sm-6 single'>
