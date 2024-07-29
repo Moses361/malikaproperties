@@ -1,6 +1,5 @@
 <?php
 
-// $db = mysqli_connect("localhost","root","","ecom_store");
 $db = mysqli_connect("localhost", "root", "", "malikaproperties");
 
 /// begining getRealIpUser function///   

@@ -48,7 +48,7 @@
                   ?>
                 
                 </a>
-                <a href="login.php"><?php  items();  ?> Items In Your Order | Total Price: Ksh.<?php total_price(); ?></a>
+                <a href="login.php">Items In Your Order | Total Price: Ksh.<?php total_price(); ?></a>
 
              </div><!--offer Finish -->
 
@@ -133,7 +133,7 @@
                       </div><!--paddig-nav  finish -->
                         <a href="../bookingHistory.php" class="btn navbar-btn btn-primary right"><!--btn navbar-btn btn-primary right Begin -->
                             <i class="fa fa-shoping-cart"></i>
-                               <span><?php  items();?> Items In Your Order</span>
+                               <span>Items In Your Order</span>
                         </a><!--btn navbar-btn btn-primary right Finish -->
                         <div class="navbar-collapse collapse right"><!--navbar-collapse collapse right  Begin -->
                         
@@ -197,14 +197,6 @@
                 
                   if (isset($_GET['my_orders'])){
                        include("my_orders.php");
-
-                  }
-                
-                ?>
-                 <?php 
-                
-                  if (isset($_GET['pay_offline'])){
-                       include("pay_offline.php");
 
                   }
                 

@@ -10,7 +10,6 @@
     $customer_email = $row_customer['customer_email'];
     $customer_county = $row_customer['customer_county'];
     $customer_contact = $row_customer['customer_contact'];
-    $customer_address = $row_customer['customer_address'];
     $customer_image = $row_customer['customer_image'];
 
 ?>
@@ -40,12 +39,6 @@
     
         <label> Customer Contact</label>
         <input type="text" name="c_contact" class="form-control" value="<?php echo $customer_contact; ?>" required>
-      
-    </div><!--form-group finish-->
-    <div class="form-group"><!--form-group begin-->
-    
-        <label> Customer Address</label>
-        <input type="text" name="c_address" class="form-control" value="<?php echo $customer_address; ?>" required>
       
     </div><!--form-group finish-->
     <div class="form-group"><!--form-group begin-->
