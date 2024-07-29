@@ -278,8 +278,21 @@ if(isset($_POST['update'])){
     move_uploaded_file($temp_name2,"product_images/$product_img2");
     move_uploaded_file($temp_name3,"product_images/$product_img3");
     
-    $update_product = "update products set p_cat_id='$product_cat',cat_id='$cat',date=NOW(),product_title='$product_title',product_img1='$product_img1',product_img2='$product_img2',product_img3='$product_img3',product_desc='$product_desc',product_price='$product_price' where product_id='$p_id'";
+    $update_product = "update products set p_cat_id='$product_cat',date=NOW(),product_title='$product_title',product_desc='$product_desc',product_price='$product_price'";
     
+    if(!empty($product_img1)){
+        $update_product .= ",product_img1='$product_img1'";
+    }
+    
+    if(!empty($product_img2)){
+        $update_product .= ",product_img2='$product_img2'";
+    }
+    
+    if(!empty($product_img3)){
+        $update_product .= ",product_img3='$product_img3'";
+    }
+    
+    $update_product .= " where product_id='$p_id'";
     $run_product = mysqli_query($con,$update_product);
     
     if($run_product){
