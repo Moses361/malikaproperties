@@ -83,7 +83,7 @@
                             <h4 class='text-red-500 font-bold text-2xl'>Ksh. ${product.product_price}</h4>
                             <h3 class='pt-2 text-3xl'>
                                 <a href='details.php?pro_id=${product.product_id}'>
-                                    ${product.product_label}
+                                    ${product.product_title}
                                 </a>
                             </h3>
                             <div class='pt-2 cursor-pointer text-primary'><i class='fa fa-map-marker'> </i> Nairobi Area </div>
