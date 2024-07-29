@@ -6,6 +6,17 @@ include("includes/header.php");
 if(!isset($_SESSION['customer_email'])){
   die("You need to be logged in to access your booking history");
 }
+
+// delete order
+if(isset($_GET['delete_order'])){
+  $order_id = $_GET['delete_order'];
+  $delete_order = "DELETE FROM orders WHERE id = '$order_id'";
+  $run_delete = mysqli_query($con,$delete_order);
+  if($run_delete){
+    echo "<script>alert('Order has been deleted')</script>";
+    echo "<script>window.open('bookingHistory.php','_self')</script>";
+  }
+}
 ?>
 
 <div id="content"><!--content  begin -->
@@ -68,6 +79,7 @@ if(!isset($_SESSION['customer_email'])){
                                 $query = mysqli_query($con,$sql);
 
                                 while($row_order=mysqli_fetch_array($query)){
+                                    $order_id = $row_order['id'];
                                     $product_id = $row_order['product_id'];
                                     $first_name= $row_order['customer_name'];
                                     $last_name = $row_order['second_name'];
@@ -102,7 +114,7 @@ if(!isset($_SESSION['customer_email'])){
                                   ?> 
                               </td>
                               <td> 
-                                  <a href="index.php?delete_order=<?php echo $order_id; ?>">
+                                  <a href="bookingHistory.php?delete_order=<?php echo $order_id; ?>">
                                       <i class="fa fa-trash-o"></i> Delete
                                   </a> 
                               </td>
@@ -117,32 +129,6 @@ if(!isset($_SESSION['customer_email'])){
           </div>
         </form><!--form   Finish -->
       </div><!--box   Finish -->
-
-      <?php
-
-      function update_cart()
-      {
-
-        global $con;
-        if (isset($_POST['update'])) {
-
-          foreach ($_POST['remove'] as $remove_id) {
-
-            $delete_product = "delete from cart where p_id='$remove_id'";
-            $run_delete = mysqli_query($con, $delete_product);
-            if ($run_delete) {
-
-              echo "
-                  <script>window.open('bookingHistory.php','_self')</script>
-                  ";
-            }
-
-          }
-        }
-
-      }
-      @$up_cart = update_cart();
-      ?>
     </div><!--cart col-md-12   Finish -->
   </div><!--container   Finish -->
 </div><!--content  Finish -->
