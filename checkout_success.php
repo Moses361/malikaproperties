@@ -69,7 +69,7 @@
 
     document.getElementById('okBtn').addEventListener('click', function(e){
         e.preventDefault();
-        window.location.href = 'orders.php';
+        window.location.href = 'bookingHistory.php';
     });
 </script>
 </body>
