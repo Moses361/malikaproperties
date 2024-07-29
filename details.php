@@ -42,7 +42,7 @@ if (isset($_POST['addToCar'])) {
         <div class="col-md-12 mt-3"><!-- col-md-9 Begin -->
             <div id="productMain" class="row"><!-- row Begin -->
                 <div class="col-sm-8"><!-- col-sm-6 Begin -->
-                    <div id="mainImage"><!-- #mainImage Begin -->
+                <div id="mainImage"><!-- #mainImage Begin -->
                         <div id="myCarousel" class="carousel slide" data-ride="carousel"><!-- carousel slide Begin -->
                             <ol class="carousel-indicators"><!-- carousel-indicators Begin -->
                                 <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -51,18 +51,20 @@ if (isset($_POST['addToCar'])) {
                             </ol><!-- carousel-indicators Finish -->
 
                             <div class="carousel-inner">
-                                <div class="item active flex justify-center">
-                                    <img class="img-responsive"
+                                <div class="item active">
+                                    <center><img class="img-responsive"
                                             src="admin_area/product_images/<?php echo $pro_img1; ?>" alt="Product 3-a">
-
+                                    </center>
                                 </div>
-                                <div class="item flex justify-center">
-                                    <img class="img-responsive"
+                                <div class="item">
+                                    <center><img class="img-responsive"
                                             src="admin_area/product_images/<?php echo $pro_img2; ?>" alt="Product 3-b">
+                                    </center>
                                 </div>
-                                <div class="item flex justify-center">
-                                    <img class="img-responsive"
+                                <div class="item">
+                                    <center><img class="img-responsive"
                                             src="admin_area/product_images/<?php echo $pro_img3; ?>" alt="Product 3-c">
+                                    </center>
                                 </div>
                             </div>
 
@@ -225,7 +227,7 @@ include("includes/footer.php");
 ?>
 
 <script src="js/jquery-331.min.js"></script>
-<script src="js/bootstrap-337.min.js"></sc  ript>
+<script src="js/bootstrap-337.min.js"></script>
 
 
 </body>
@@ -235,19 +237,6 @@ include("includes/footer.php");
 <script>
     // document.getElementById("myDiv").style.display = "none";
     document.addEventListener('DOMContentLoaded', function () {
-        // Your code here
-        console.log('The DOM has loaded.');
-        function hello() {
-            // alert(b4);
-            $origin = document.getElementById("origin").value
-            $destination = document.getElementById("destination").value
-            $date = getElementById("date").value
-
-            document.getElementById("hide").style.display = "block";
-            // document.getElementById("total"). = "block";
-
-        }
-
          // JavaScript to handle tab switching
         document.querySelectorAll('.tab-button').forEach(button => {
         button.addEventListener('click', () => {
