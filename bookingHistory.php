@@ -17,6 +17,31 @@ if(isset($_GET['delete_order'])){
     echo "<script>window.open('bookingHistory.php','_self')</script>";
   }
 }
+
+// check if order has been paid
+function checkOrderPaymentStatus($con, $customer_id){
+  $sql = "SELECT * FROM transactions WHERE checked=false AND checkout_request_id != '' AND customer_id='$customer_id'";
+  $query = mysqli_query($con, $sql);
+  if (!$query) die("Error getting transactions: ".mysqli_error($con));
+
+  while(($data = mysqli_fetch_array($query))){
+      $order_id = $data['order_id'];
+      $mpesa = new MpesaApi($order_id);
+      $response = $mpesa->verifyTransactionDetails($data['checkout_request_id']);
+      $data = json_decode($response, true);
+      $resultCode = $data['ResultCode'];
+      if ($resultCode == 0){
+          // order successfully paid. update order status
+          $sql = "UPDATE transactions SET paid=1, checked=true WHERE order_id='$order_id';";
+      }else{
+          // order cancelled or not paid, or cancelled by the user
+          $sql = "UPDATE transactions SET paid=2, checked=true WHERE order_id='$order_id';";
+      }
+      $q2 = mysqli_query($con, $sql); // update orders
+      if (!$q2) die("Errror updating payment status: ".mysqli_error($con));
+  }
+}
+
 ?>
 
 <div id="content"><!--content  begin -->
@@ -66,7 +91,8 @@ if(isset($_GET['delete_order'])){
                         <tbody><!-- tbody begin -->
                             <?php 
                                 // update orders payment status
-                                // checkOrderPaymentStatus($con);
+                                checkOrderPaymentStatus($con, $_SESSION['customer_id']);
+
                                 $sql = "SELECT orders.*, 
                                         customers.customer_name, customers.second_name, customers.customer_email, customers.customer_contact, 
                                         products.product_id, products.product_title, products.product_img1, products.product_price, products.location,
@@ -92,7 +118,7 @@ if(isset($_GET['delete_order'])){
                                     $total_amount = $unit_price * $units_booked;
                                     $date = $row_order['created_at'];
                                     // format date in terms of  
-                                    $payment_status = $row_order['is_paid'] ? 'Paid' : 'Pending';
+                                    $payment_status = ($row_order['is_paid'] == 0) ? 'Pending' : (($row_order['is_paid'] == 1) ? 'Paid' : 'Cancelled');
                                     $date = date('d/m/y h:i A', strtotime($date));
                                     $unit_price = number_format($unit_price,"0", ".",",");
                                     $total_amount = number_format($total_amount,"0", ".",",");
