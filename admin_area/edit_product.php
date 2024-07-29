@@ -262,7 +262,6 @@ if(isset($_POST['update'])){
     
     $product_title = $_POST['product_title'];
     $product_cat = $_POST['product_cat'];
-    $cat = $_POST['cat'];
     $product_price = $_POST['product_price'];
     $product_desc = $_POST['product_desc'];
     

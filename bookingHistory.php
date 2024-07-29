@@ -2,6 +2,7 @@
 $active = 'SHOPPING CART';
 //  date_default_timezone_set('UTC');
 include("includes/header.php");
+include_once("payment.php");
 
 if(!isset($_SESSION['customer_email'])){
   die("You need to be logged in to access your booking history");

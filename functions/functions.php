@@ -372,8 +372,3 @@ function get_unit_price($id)
 
 
 }
-
-
-
-
-?>
