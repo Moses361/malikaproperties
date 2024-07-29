@@ -99,8 +99,8 @@
                     </div>
                 </div>
                 `;
-                return html;
             }
+            return html;
         }
      </script>
 </body>
