@@ -22,6 +22,7 @@
         $pro_img1 = $row_product['product_img1'];
         $pro_img2 = $row_product['product_img2'];
         $pro_img3 = $row_product['product_img3'];
+        $pro_location = $row_product['location'];
 
         $get_p_cat = "select * from product_categories where p_cat_id='$p_cat_id'";
 
@@ -52,7 +53,20 @@
              content-visibility: auto;
             }
          }
+
+         .blink {
+                animation: linear infinite;
+                color: black;
+                font-family: sans-serif;
+            }
+
+            @keyframes blinker {
+                50% {
+                    opacity: 0;
+                }
+            }
          </style>
+
 
    <script src="https://cdn.tailwindcss.com"></script>
    <script>

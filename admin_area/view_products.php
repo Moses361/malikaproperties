@@ -70,6 +70,7 @@
                                     $pro_price = $row_pro['product_price'];
                                     
                                     $pro_date = $row_pro['date'];
+                                    $pro_location = $row_pro['location'];
                                     
                                     $i++;
                             

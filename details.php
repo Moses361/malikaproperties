@@ -120,7 +120,7 @@ if (isset($_POST['addToCar'])) {
                         <!-- Tab Content -->
                         <div id="tab1" class="tab-content mt-4">
                             <h3 class="text2xl font-bold">Description</h3>
-                            <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, nemo!</p>
+                            <p>Exceptional services!</p>
                         </div>
                         <div id="tab2" class="tab-content mt-4">
                             <h3 class="text-2xl font-bold">Amenities</h3>
@@ -129,6 +129,8 @@ if (isset($_POST['addToCar'])) {
                                 <li>Hot Shower</li>
                                 <li>Free Parkin</li>
                                 <li>Swimming Pool</li>
+                                <li></li>
+                                <li>Located at: <?php echo $pro_location; ?></li>
                             </ul>
                         </div>
                 </div><!-- col-sm-6 Finish -->
@@ -185,6 +187,7 @@ if (isset($_POST['addToCar'])) {
 
                     $pro_price = $row_products['product_price'];
                     $pro_price = number_format($pro_price, "0", ".", ",");
+                    $pro_location = $row_products['location'];
 
                     echo "
                         <div class='sinle'>

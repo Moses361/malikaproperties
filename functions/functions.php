@@ -84,6 +84,7 @@ function getPro()
         $pro_price = $row_products['product_price'];
         $pro_price = number_format($pro_price, "0", ".", ",");
         $pro_img1 = $row_products['product_img1'];
+        $pro_location = $row_products['location'];
 
         echo "
         <div class='col-md-4 col-sm-6 single'>
@@ -98,7 +99,7 @@ function getPro()
                             $pro_title
                         </a>
                     </h3>
-                    <div class='pt-2 cursor-pointer text-primary'><i class='fa fa-map-marker'> </i> Nairobi Area </div>
+                    <div class='pt-2 cursor-pointer text-primary'><i class='fa fa-map-marker'> </i> Nairobi Area | $pro_location </div>
                     <p class='button pt-2 flex justify-between'>
                         <a class='btn btn-default' href='details.php?pro_id=$pro_id'>
                             View Listing
@@ -115,6 +116,29 @@ function getPro()
     }
 }
 /// finish getPro function///
+
+/// begining getLoc function///  
+
+function getLoc()
+{
+
+    global $db;
+    $get_products = "select * from products ";
+
+    $run_products = mysqli_query($db, $get_products);
+    while ($row_products = mysqli_fetch_array($run_products)) {
+
+        $pro_id = $row_products['product_id'];
+
+        $pro_location = $row_products['location'];
+
+        echo "
+            $pro_location,
+        ";
+
+    }
+}
+/// finish getLoc function///
 
 /// begining getPCats function///
 function getPCats()

@@ -31,6 +31,17 @@
     <h2 class="capitalize pl-20 text-primary text-6xl">Featured Listings</h2>
 </div><!--box  Finish -->
 
+<div class="bg-white p-5 mx-2 my-4">
+    <h5 class="pl-10 text-6xl">Our Locations</h5>
+    <div>
+    <marquee class="blink">
+        <?php 
+            getLoc();
+            ?>
+    </marquee>
+</div>
+</div>
+
  <div id="content" class="container"><!--container begin -->
 
 <div class="grid grid-cols-4 gap-x-5 productsList"><!--row  begin -->
