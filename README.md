@@ -1,5 +1,5 @@
 
-# Packers And Movers
+# Real Estate Listing Management System
 ## About
 Real Eastate Properties is  web application project whose main aim is to provide information and services related to searching location of properties in different places in Nairobi.Clients can therefore find and book reliable houses for their settlement needs.
 
